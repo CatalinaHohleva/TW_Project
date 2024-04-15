@@ -303,7 +303,7 @@
                         <li>Aceasta reprezintă meniul de navigare către fiecare pagina a aplicației, prezent pe fiecare
                             pagină totodată.
                         </li>
-                        <li class="pictures" style="list-style: none"><img alt="navbar" src="navBar.png" width=800
+                        <li class="pictures" style="list-style: none"><img alt="navbar" src="readMeImages/navbar.png" width=800
                         ></li>
                     </ul>
                 </li>
