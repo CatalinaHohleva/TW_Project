@@ -41,19 +41,18 @@
                         <li><a href="#nav-bar">3.1.1 Bara de navigație </a></li>
                         <li><a href="#login-page">3.1.2 Pagina de autentificare </a></li>
                         <li><a href="#signup-page">3.1.3 Pagina de înregistrare </a></li>
-                        <li><a href="#sendMail-page">3.1.4 Pagina de trimitere email pentru resetarea parolei </a></li>
-                        <li><a href="#resetPassword-page">3.1.5 Pagina de resetarea a parolei </a></li>
-                        <li><a href="#home-page">3.1.6 Pagina acasă </a></li>
-                        <li><a href="#movies">3.1.7 Pagina de explorare a filmelor </a></li>
-                        <li><a href="#tvShows">3.1.8 Pagina de explorare a serialelor </a></li>
-                        <li><a href="movieTvShow-page">3.1.9 Pagina de vizualizare a informatiilor despre un anume film/serial </a></li>
-                        <li><a href="#about">3.1.10 Pagina informativa </a></li>
-                        <li><a href="#help">3.1.11 Pagina de ajutor </a></li>
-                        <li><a href="#profile">3.1.12 Pagina de profil </a></li>
-                        <li><a href="#error400">3.1.13 Pagina 400 </a></li>
-                        <li><a href="#error404">3.1.14 Pagina 404 </a></li>
-                        <li><a href="#admin">3.1.15 Pagina administratorului </a></li>
-                        <li><a href="#changepass">3.1.16 Pagina de schimbare a parolei </a></li>
+                        <li><a href="#resetPassword-page">3.1.4 Pagina de resetarea a parolei </a></li>
+                        <li><a href="#home-page">3.1.5 Pagina acasă </a></li>
+                        <li><a href="#movies">3.1.6 Pagina de explorare a filmelor </a></li>
+                        <li><a href="#tvShows">3.1.7 Pagina de explorare a serialelor </a></li>
+                        <li><a href="movieTvShow-page">3.1.8 Pagina de vizualizare a informatiilor despre un anume film/serial </a></li>
+                        <li><a href="#about">3.1.9 Pagina informativa </a></li>
+                        <li><a href="#help">3.1.10 Pagina de ajutor </a></li>
+                        <li><a href="#profile">3.1.11 Pagina de profil </a></li>
+                        <li><a href="#error400">3.1.12 Pagina 400 </a></li>
+                        <li><a href="#error404">3.1.13 Pagina 404 </a></li>
+                        <li><a href="#admin">3.1.14 Pagina administratorului </a></li>
+                        <li><a href="#changepass">3.1.15 Pagina de schimbare a parolei </a></li>
                     </ul>
                 </li>
                 <li><a href="#hardware-interface">3.2 Interfața Hardware </a></li>
@@ -350,7 +349,7 @@
                             al paginii, pentru a reveni la meniul de autentificare.
                         </li>
                         <li class="pictures" style="list-style: none"><img alt="signup" height="400"
-                                                                           src="images/signupPage.png" width=800>
+                                                                           src="navbar.png" width=800>
                     </ul>
                 </li>
                 <li id="resetPassword-page"><b>Pagina de de resetare a parolei prin mail</b></li>
