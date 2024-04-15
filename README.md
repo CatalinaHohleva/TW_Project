@@ -435,7 +435,7 @@
                         <li>Pagina începe cu o imagine de copertă si una a posterului filmului sau serialului, 
                             oferind utilizatorilor o primă impresie vizuală a conținutului. Continua
                             cu o serie de informatii printre care se numara: titlul, durata, genurile,
-                            un scurt sinopsis, directorul, rating, etc. Trailer, dacă este disponibil, 
+                            un scurt sinopsis, directorul, rating, etc. Trailerul, dacă este disponibil, 
                             va fi afișat pentru a oferi utilizatorilor o previzualizare a conținutului.
                             Se listează actorii și actrițele principale 
                             care apar în filmul sau serialul respectiv, împreună cu numele personajelor lor.
