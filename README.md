@@ -440,9 +440,15 @@
                             Se listează actorii și actrițele principale 
                             care apar în filmul sau serialul respectiv, împreună cu numele personajelor lor.
                         </li>
-                        <li class="pictures" style="list-style: none"><img alt="streetSigns"
-                                                                           src="images/streetSigns.png" width=800
-                        >
+                        <li class="pictures" style="list-style: none"><img alt="desc1"
+                                                                           src="readMeImages/desc1.png" width=800>
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="desc2"
+                                                                           src="readMeImages/desc2.png" width=800>
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="desc3"
+                                                                           src="readMeImages/desc3.png" width=600>
+                        </li>
                     </ul>
                 </li>
                 <li id="about"><b>Pagina informativa</b></li>
