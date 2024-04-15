@@ -396,13 +396,13 @@
                            pentru filmele vizionate.
                         </li>
                         <li class="pictures" style="list-style: none"><img alt="movie1"
-                                                                           src="readMeImagaes/movie1.png" width=800>
+                                                                           src="readMeImages/movie1.png" width=800>
                         </li>
                         <li class="pictures" style="list-style: none"><img alt="movie2"
-                                                                           src="readMeImagaes/movie2.png" width=800>
+                                                                           src="readMeImages/movie2.png" width=800>
                         </li>
                         <li class="pictures" style="list-style: none"><img alt="movie3"
-                                                                           src="readMeImagaes/movie3.png" width=800>
+                                                                           src="readMeImages/movie3.png" width=800>
                         </li>
                     </ul>
                 </li>
@@ -418,13 +418,13 @@
                            recenzii și ratinguri de la alți utilizatori. Utilizatorii pot lăsa recenzii și ratinguri 
                            pentru serialele vizionate.
                         </li>
-                        <li class="pictures" style="list-style: none"><img alt="tvShows1" src="readMeImages/tvShows1"
+                        <li class="pictures" style="list-style: none"><img alt="tvShows1" src="readMeImages/tvShows1.png"
                                                                            width=800>
                         </li>
-                        <li class="pictures" style="list-style: none"><img alt="tvShows2" src="readMeImages/tvShows2"
+                        <li class="pictures" style="list-style: none"><img alt="tvShows2" src="readMeImages/tvShows2.png"
                                                                            width=800>
                         </li>
-                        <li class="pictures" style="list-style: none"><img alt="tvShows3" src="readMeImages/tvShows3"
+                        <li class="pictures" style="list-style: none"><img alt="tvShows3" src="readMeImages/tvShows3.png"
                                                                            width=800>
                         </li>
                     </ul>
