@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
 </head>
 <body>
 <article>
@@ -433,25 +432,17 @@
                 <li id="movieTvShow-page"><b> Pagina de vizualizare a informatiilor despre un anume film/serial</b></li>
                 <li style="list-style: none">
                     <ul>
-                        <li>Pagina conține semne rutiere atât din țară noastră, cât și din alte cinci țări.</li>
-                        <li> Pentru a accesa semnele din România, se va face click pe steag, urmând să se selecteze în
-                            mod specific
-                            categoria de semne dorită spre a fi văzută. Apăsând pe oricare dintre cele 5 steaguri
-                            străine, se va deschide
-                            o listă cu semnele de circulație corespunzătoare.
+                        <li>Pagina începe cu o imagine de copertă si una a posterului filmului sau serialului, 
+                            oferind utilizatorilor o primă impresie vizuală a conținutului. Continua
+                            cu o serie de informatii printre care se numara: titlul, durata, genurile,
+                            un scurt sinopsis, directorul, rating, etc. Trailer, dacă este disponibil, 
+                            va fi afișat pentru a oferi utilizatorilor o previzualizare a conținutului.
+                            Se listează actorii și actrițele principale 
+                            care apar în filmul sau serialul respectiv, împreună cu numele personajelor lor.
                         </li>
                         <li class="pictures" style="list-style: none"><img alt="streetSigns"
                                                                            src="images/streetSigns.png" width=800
-                        ></li>
-                        <li class="pictures" style="list-style: none"><img alt="streetSignsRomania"
-                                                                           src="images/streetSignsRomania.png" width=800
-                        ></li>
-                        <li class="pictures" style="list-style: none"><img alt="streetSignsRomaniaExamples"
-                                                                           src="images/streetSignsRomaniaExample.png" width=800
-                        ></li>
-                        <li class="pictures" style="list-style: none"><img alt="streetSignsItaly"
-                                                                           src="images/streetSignsItaly.png" width=800
-                        ></li>
+                        >
                     </ul>
                 </li>
                 <li id="about"><b>Pagina informativa</b></li>
