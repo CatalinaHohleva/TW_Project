@@ -326,7 +326,7 @@
                             ulterioarea selectand optiunea de 
                             <b> Remember me </b></li>
                         <li class="pictures" style="list-style: none"><img alt="login" height="400"
-                                                                           src="images/loginPage.png" width=800>
+                                                                           src="readMeImages/signin.png" width=800>
                         </li>
                     </ul>
                 </li>
@@ -349,7 +349,7 @@
                             al paginii, pentru a reveni la meniul de autentificare.
                         </li>
                         <li class="pictures" style="list-style: none"><img alt="signup" height="400"
-                                                                           src="navbar.png" width=800>
+                                                                           src="readMeImages/signup.png" width=800>
                     </ul>
                 </li>
                 <li id="resetPassword-page"><b>Pagina de de resetare a parolei prin mail</b></li>
@@ -361,17 +361,26 @@
                             va fi redirecționat
                             către pagină de autentificare.
                         </li>
-                        <li class="pictures" style="list-style: none"><img alt="login" height="400"
-                                                                           src="images/sendMail.png" width=800></li>
+                        <li class="pictures" style="list-style: none"><img alt="forgotPassword" height="400"
+                                                                           src="readMeImages/forgotPassword.png" width=800></li>
                     </ul>
                 </li>
                 <li id="home-page"><b> Pagina acasă</b></li>
                 <li style="list-style: none">
                     <ul>
                         <li>Pagina are rolul de prezența ultimele tendinte, ultimele trailere lansate, filme si seriale populare.</li>
-                        <li class="pictures" style="list-style: none"><img alt="overview" src="images/homePage.png"
+                        <li class="pictures" style="list-style: none"><img alt="home1" src="readMeImages/home1.png"
                                                                            width=800>
                         </li>
+                        <li class="pictures" style="list-style: none"><img alt="home2" src="readMeImages/home2.png"
+                                                                           width=800>
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="home3" src="readMeImages/home3.png"
+                                                                           width=800>
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="home4" src="readMeImages/home4.png"
+                                                                           width=800>
+                        </li> 
                     </ul>
                 </li>
                 <li id="movies"><b> Pagina de explorare a filmelor </b></li>
