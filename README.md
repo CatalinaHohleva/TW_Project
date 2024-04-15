@@ -2,6 +2,8 @@
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation</title>
 </head>
 <body>
 <article>
@@ -428,7 +430,7 @@
                                                                            width=800>
                         </li>
                     </ul>
-                <li id="signs"><b>Pagina cu semnele de circulație</b></li>
+                <li id="movieTvShow-page"><b> Pagina de vizualizare a informatiilor despre un anume film/serial</b></li>
                 <li style="list-style: none">
                     <ul>
                         <li>Pagina conține semne rutiere atât din țară noastră, cât și din alte cinci țări.</li>
@@ -470,7 +472,7 @@
                            sfaturi pentru a putea beneficia de o experienta completa pe site.
                         </li>
                         <li class="pictures" style="list-style: none"><img alt="help" src="readMeImages/help.png"
-                                                                           width=800
+                                                                           width=800>
                         </li>
                     </ul>
                 <li id="profile"><b>Pagina de profil</b></li>
