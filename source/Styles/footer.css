@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+.footer {
+    background-color: #01022f;
+    color: #eee;
+    padding: 20px 30px;
+    margin: 0;
+    height: auto;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer .left-footer {
+	width: 33.3%;
+	font-size: 30px;
+	font-family: Verdana, Tahoma, sans-serif;
+	color: #eee;
+    margin-top: 50px;
+}
+
+.left-footer p {
+    margin: auto;
+    font-size: 18px;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+.left-footer p#copyright {
+    font-size: 14px;
+}
+
+.footer .center-footer {
+	width: 33.3%;
+	font-family: Verdana, Tahoma, sans-serif;
+	color: #eee;
+}
+
+.footer .right-footer {
+	width: 33.3%;
+	font-family: Verdana, Tahoma, sans-serif;
+	color: #eee;
+}
+
+.center-footer h3, .right-footer h3{
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: white;
+}
+
+.center-footer a, .right-footer a {
+    text-decoration: none;
+    color: white;
+}
+
+.center-footer ul{
+    text-align: center;
+}
+.list{
+    padding: 0;
+}
+.list li{
+    width: auto;
+    text-align: center;
+    list-style-type:none;
+    padding: 7px;
+    position: relative;
+}
+.list li::before{
+    content: '';
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 100%;
+    width: 0;
+    height: 2px;
+    background: #939393;
+    transition-duration: .5s;
+}
+.list li:hover::before{
+    width: 70px;
+}
+
+.team-member {
+    padding: 0px;
+    text-align: center;
+    text-decoration: none;
+
+}
+
+.right-footer i {
+    color: white;
+}
