@@ -229,7 +229,7 @@
                 <li>dacă utilizatorul are rol de <b>admin</b>, acesta poate șterge utilizatori din baza de date</li>
                 <li>dacă utilizatorul are rol de <b>admin</b>, acesta poate adăuga filme/seriale noi</li>
                 <li>dacă utilizatorul are rol de <b>admin</b>, acesta poate modifica informatii despre date deja
-                    existente
+                    existente.
                 </li>
             </ul>
         </section>
@@ -395,8 +395,14 @@
                            recenzii și ratinguri de la alți utilizatori. Utilizatorii pot lăsa recenzii și ratinguri 
                            pentru filmele vizionate.
                         </li>
-                        <li class="pictures" style="list-style: none"><img alt="movies"
-                                                                           src="images/learningPage.png" width=800>
+                        <li class="pictures" style="list-style: none"><img alt="movie1"
+                                                                           src="readMeImagaes/movie1.png" width=800>
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="movie2"
+                                                                           src="readMeImagaes/movie2.png" width=800>
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="movie3"
+                                                                           src="readMeImagaes/movie3.png" width=800>
                         </li>
                     </ul>
                 </li>
@@ -412,7 +418,13 @@
                            recenzii și ratinguri de la alți utilizatori. Utilizatorii pot lăsa recenzii și ratinguri 
                            pentru serialele vizionate.
                         </li>
-                        <li class="pictures" style="list-style: none"><img alt="tvShows" src="i mages/rulesPage.png"
+                        <li class="pictures" style="list-style: none"><img alt="tvShows1" src="readMeImages/tvShows1"
+                                                                           width=800>
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="tvShows2" src="readMeImages/tvShows2"
+                                                                           width=800>
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="tvShows3" src="readMeImages/tvShows3"
                                                                            width=800>
                         </li>
                     </ul>
@@ -446,7 +458,9 @@
                         <li>Pagina are rolul de a introduce site-ul MTSE pe scurt, prin menționarea unor mici detalii:
                             numele autorilor, rolul aplicației.
                         </li>
-                        <li class="pictures" style="list-style: none"><img alt="overview" src="images/aboutPage.png" width=800>
+                        <li class="pictures" style="list-style: none"><img alt="aboutUs1" src="readMeImages/aboutUs1.png" width=800>
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="aboutUs2" src="readMeImages/aboutUs2.png" width=800>
                         </li>
                     </ul>
                 <li id="help"><b>Pagina de ajutor</b></li>
@@ -455,7 +469,7 @@
                         <li>Pagina are rolul de a oferi utilizatorului posibilitatea de a pune intrebari, ulterior oferindu-i-se 
                            sfaturi pentru a putea beneficia de o experienta completa pe site.
                         </li>
-                        <li class="pictures" style="list-style: none"><img alt="overview" src="images/helpPage.png"
+                        <li class="pictures" style="list-style: none"><img alt="help" src="readMeImages/help.png"
                                                                            width=800
                         </li>
                     </ul>
@@ -479,73 +493,38 @@
                 <li id="error400"><b>Pagina 400</b></li>
                 <li style="list-style: none">
                     <ul>
-                        <li>Pagina afișează eroarea <b>400 Cerere greșită</b>.</li>
-                        <li class="pictures" style="list-style: none"><img alt="overview" src="images/error400.png"
-                                                                           width=800>
-                        </li>
+                        <li>Urmeaza a fi implementata.</li>
+                        <li>Pagina va afișeaza eroarea <b>400 Cerere greșită</b>.</li>
                     </ul>
                 </li>
                 <li id="error404"><b>Pagina 404</b></li>
                 <li style="list-style: none">
                     <ul>
-                        <li>Pagina afișează eroarea <b>404 Cerere greșită</b>.</li>
-                        <li class="pictures" style="list-style: none"><img alt="overview" src="images/error404.png"
-                                                                           width=800>
-                        </li>
+                        <li>Urmeaza a fi implementata.</li>
+                        <li>Pagina va afișeaza eroarea <b>404 Cerere greșită</b>.</li>
                     </ul>
                 </li>
                 <li id="admin"><b>Pagina Administratorului</b></li>
                 <li style="list-style: none">
                     <ul>
-                        <li>Pagina afișează interfață pentru <b>adminstrator</b>.</li>
-                        <li class="pictures" style="list-style: none"><img alt="overview" src="images/admin1.png"
-                                                                           width=800>
-                        </li>
-                        <li>Administratorul are capacitatea de a adaugă/modifică
-                            întrebări și/sau chestionare și de a șterge utilizatori din baza de date.
-                        </li>
-                        <li class="pictures" style="list-style: none"><img alt="overview" src="images/admin2.png"
-                                                                           width=800>
-                        </li>
-                        <li>Formularul <b>Creare întrebare</b> se va completa cu informațiile necesare, întrebarea
-                            urmand sa se
-                            salveze in baza de date. La fel se procedeaza si pentru chestionare.
-                        </li>
-                        <li class="pictures" style="list-style: none"><img alt="overview" src="images/admin3.png"
-                                                                           width=800>
-                        </li>
-                        <li>Formularul <b>Actualizare întrebare</b> se va completa cu <b>ID-ul</b> dorit, întrebarea
-                            urmand sa se
-                            salveze in baza de date printr-un formular ca la punctul precedent. La fel se procedeaza si
-                            pentru chestionare.
-                        </li>
-                        <li class="pictures" style="list-style: none"><img alt="overview" src="images/admin4.png"
-                                                                           width=800>
-                        </li>
-                        <li>Pentru a șterge un utilizator din baza de date, se va apasă butonul corespunzător fiecărui
-                            utilizator din tabel.
-                        </li>
-                        <li class="pictures" style="list-style: none"><img alt="overview" src="images/admin5.png"
-                                                                           width=800>
+                        <li>Urmeaza a fi implementata.</li>
+                        <li>Pagina va afișeaza interfață pentru <b>adminstrator</b>.</li>
+                        <li>Administratorul are capacitatea de a adauga noi filme/seriale, de a modifica
+                            informatii despre date deja existente și de a șterge utilizatori din baza de date.
                         </li>
                     </ul>
                 </li>
                 <li id="changepass"><b>Pagina de schimbare a parolei</b></li>
                 <li style="list-style: none">
                     <ul>
-                        <li>Pagină afișează un formular numit <b>Resetare parolă</b>, unde se vor completa corespunzător
+                        <li>Urmeaza a fi implementata.</li>
+                        <li>Pagină afișează un formular numit <b>Reset Password</b>, unde se vor completa corespunzător
                             câmpurile
                             pentru a schimbă parolă veche cu cea nouă.
                         </li>
-                        <li class="pictures" style="list-style: none"><img alt="overview" src="images/changePass.png"
-                                                                           width=800>
-                        </li>
                         <li>Se va primi un mesaj ce confirmă această schimbare, putând reveni la profil prin acționarea
                             butonului
-                            <b>Înapoi la profil</b>.
-                        </li>
-                        <li class="pictures" style="list-style: none"><img alt="overview" src="images/passChanged.png"
-                                                                           width=800>
+                            <b>Continue</b>.
                         </li>
                     </ul>
                 </li>
