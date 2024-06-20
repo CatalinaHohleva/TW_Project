@@ -9,6 +9,7 @@
 
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -17,12 +18,8 @@ body {
 
 .login-logo {
     text-align: center;
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    z-index: 999;
+    position: relative; 
+    margin-bottom: 10px;
 }
 
 .login-logo a {
@@ -31,8 +28,21 @@ body {
     text-decoration: none;
 }
 
+.error-box {
+    display: none;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 5px;
+    width: calc(100% - 80px);
+    max-width: 400px; 
+    text-align: center;
+    margin: 20px auto; 
+}
+
 .wrapper {
-    margin-top: 70px;
+    margin-top: 10px;
     width: 420px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .2);
@@ -44,7 +54,7 @@ body {
 }
 
 .wrapper h1 {
-    font-size: 36px;
+    font-size: 35px;
     text-align: center;
 }
 
@@ -108,6 +118,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     font-size: 20px;
+    cursor: pointer;
 }
 
 .wrapper .remember-forgot {
@@ -167,3 +178,8 @@ body {
     text-decoration: underline;
 }
 
+.timer {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.2em;
+}

@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(255, 255, 255);
+}
+
+.login-logo {
+    text-align: center;
+    position: relative; 
+    margin-bottom: 10px;
+}
+
+.login-logo a {
+    font-size: 3em;
+    color: midnightblue;
+    text-decoration: none;
+}
+
+.wrapper {
+    margin-top: 10px;
+    width: 420px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: midnightblue;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.wrapper h2 {
+    font-size: 26px;
+    margin-bottom: 10px; /* Space below heading */
+    text-align: center;
+}
+
+.wrapper h6 {
+    font-size: 12px; /* Increased font size */
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-bottom: 20px; /* Increased margin below paragraph */
+}
+
+.wrapper .button {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
