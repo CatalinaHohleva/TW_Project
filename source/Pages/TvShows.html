@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
     <header>
@@ -51,7 +52,7 @@
 
     <form action="search" class="search">
         <input type="search" placeholder="Search..." class="search_input">
-        <div class="search_button" id="search-button">
+        <div class="search_button" id="search-button" type="submit">
             <i class="ri-search-2-line search_icon"></i>
             <i class="ri-close-line search_close"></i>
         </div>
@@ -73,15 +74,11 @@
             </li>
 
             <li class="option">
-                <span class="option-text">Rating Descending</span>
-            </li>
-
-            <li class="option">
-                <span class="option-text">Rating Ascending</span>
-            </li>
-
-            <li class="option">
                 <span class="option-text">Title (A-Z)</span>
+            </li>
+
+            <li class="option">
+                <span class="option-text">Title (Z-A)</span>
             </li>
         </ul>
     </div>
@@ -193,68 +190,12 @@
                 <span class="option-text">Western</span>
             </li>
         </ul>
-        <button type="submit" class="apply-btn">Apply</button>
+        <button type="submit" class="apply-btn" id="apply-btn">Apply</button>
     </div>
 
 
     <div class="container">
-        <div class="movie-list">
-            <div class="movie">
-                <img src="https://media.themoviedb.org/t/p/w220_and_h330_face/qNCDNWWb42kc8Sn0mpXwG9Tm3a4.jpg" alt="Shōgun">
-                <h2>Shōgun</h2>
-                <p>Feb 27, 2024</p>
-            </div>
-            <div class="movie">
-                <img src="https://media.themoviedb.org/t/p/w220_and_h330_face/ykZ7hlShkdRQaL2aiieXdEMmrLb.jpg" alt="3 Body Problem">
-                <h2>3 Body Problem</h2>
-                <p>Mar 21, 2024</p>
-            </div>
-            <div class="movie">
-                <img src="https://media.themoviedb.org/t/p/w220_and_h330_face/rubaKfmdCvWGPXErgW9aQsgzKVr.jpg" alt="Parasyte: The Grey">
-                <h2>Parasyte: The Grey</h2>
-                <p>Apr 05, 2024</p>
-            </div>
-            <div class="movie">
-                <img src="https://media.themoviedb.org/t/p/w220_and_h330_face/qK9dvXKBbgFOXg7O5hAvIobNVLu.jpg" alt="Anthracite">
-                <h2>Anthracite</h2>
-                <p>Apr 10, 2024</p>
-            </div>
-            <div class="movie">
-                <img src="https://media.themoviedb.org/t/p/w220_and_h330_bestv2/9PFonBhy4cQy7Jz20NpMygczOkv.jpg" alt="Wednesday">
-                <h2>Wednesday</h2>
-                <p>Nov 23, 2022</p>
-            </div>
-            <div class="movie">
-                <img src="https://media.themoviedb.org/t/p/w220_and_h330_bestv2/wcaDIAG1QdXQLRaj4vC1EFdBT2.jpg" alt="The 100">
-                <h2>The 100</h2>
-                <p>Mar 19, 2014</p>
-            </div>
-            <div class="movie">
-                <img src="https://media.themoviedb.org/t/p/w220_and_h330_bestv2/5LLG9bjq0i7V5N4UfRhnab8zHK4.jpg" alt="American Horror Story">
-                <h2>American Horror Story</h2>
-                <p>Oct 5, 2011</p>
-            </div>
-            <div class="movie">
-                <img src="https://media.themoviedb.org/t/p/w220_and_h330_bestv2/eyTu5c8LniVciRZIOSHTvvkkgJa.jpg" alt="Bones">
-                <h2>Bones</h2>
-                <p>Sep 13, 2005</p>
-            </div>
-            <div class="movie">
-                <img src="https://media.themoviedb.org/t/p/w220_and_h330_bestv2/wbeqBUFydztHDQ4h7dZqnknh5HE.jpg" alt="The rookie">
-                <h2>The rookie</h2>
-                <p>Oct 16, 2018</p>
-            </div>
-            <div class="movie">
-                <img src="https://media.themoviedb.org/t/p/w220_and_h330_bestv2/luoKpgVwi1E5nQsi7W0UuKHu2Rq.jpg" alt="Bridgerton">
-                <h2>Bridgerton</h2>
-                <p> Dec 25, 2023</p>
-            </div>
-            <div class="movie">
-                <img src="https://media.themoviedb.org/t/p/w220_and_h330_bestv2/lwPFyjxAZY6NqHxywgY00Y4MFBx.jpg" alt="Jessica Jones">
-                <h2>Jessica Jones</h2>
-                <p>Nov 20, 2015</p>
-            </div>
-        </div>
+        <div class="movie-list" id="movie-list"></div>
     </div>
 
     <div class="footer">
@@ -268,6 +209,7 @@
             <ul class="list">
                 <li><a href="AboutUs.html">About Us</a></li>
                 <li><a href="ContactUs.html">Help</a></li>
+                <li><a href="Statistics.html">Statistics</a></li>
             </ul>
         </div>
 
@@ -285,5 +227,12 @@
             </div>
         </div>
     </div>
+
+    <script src="filter-script.js"></script>
 </body>
 </html>
+
+<!--responsive nutbar
+footer
+maybe pagination
+-->

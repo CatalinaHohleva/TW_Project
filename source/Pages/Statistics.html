@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies</title>
+    <title>Statistics</title>
     <link rel="icon" href= "https://i.ibb.co/4jWkmXS/film-reel.png">
     <link rel="stylesheet" type="text/css" href="header.css">
     <link rel="stylesheet" type="text/css" href="content_TvShows_Movies.css">
     <link rel="stylesheet" type="text/css" href="footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
-<body>
+<d>
     <header>
         <div class="container-header">
             <div class="subcontainer-header">
@@ -25,9 +26,6 @@
                         <li>
                             <a href="TvShows.html">TV Shows</a>
                         </li>
-                        <!--<li>
-                            <a href="#">Actors</a>
-                        </li>-->
                         <li>
                             <a href="sign_in.html" class="login-btn">Sign in</a>
                         </li>
@@ -48,39 +46,6 @@
             </div>
         </div>
     </header>
-
-    <form action="search" class="search">
-        <input type="search" placeholder="Search..." class="search_input">
-        <div class="search_button" id="search-button">
-            <i class="ri-search-2-line search_icon"></i>
-            <i class="ri-close-line search_close"></i>
-        </div>
-    </form>
-
-    <div class="select-menu">
-        <div class="select-btn">
-            <span class="sBtn-text">Sort</span>
-            <i class="ri-arrow-down-wide-line"></i>
-        </div>
-
-        <ul class="options">
-            <li class="option">
-                <span class="option-text">Release Date Descending</span>
-            </li>
-
-            <li class="option">
-                <span class="option-text">Release Date Ascending</span>
-            </li>
-
-            <li class="option">
-                <span class="option-text">Title (A-Z)</span>
-            </li>
-
-            <li class="option">
-                <span class="option-text">Title (Z-A)</span>
-            </li>
-        </ul>
-    </div>
 
     <div class="select-watch">
         <div class="select-btn">
@@ -103,98 +68,44 @@
 
     <div class="select-year">
         <div class="select-btn">
-            <span class="sBtn-text">Release Period</span>
+            <span class="sBtn-text">Release Year</span>
             <i class="ri-arrow-down-wide-line"></i>
         </div>
 
         <ul class="options-year">
             <li class="option-year">
-                <input type="number" id="year1" name="year1" placeholder="Enter year">
-            </li>
-
-            <li class="option-year">
-                <input type="number" id="year2" name="year2" placeholder="Enter year">
-            </li>
-        </ul>
-    </div>
-
-    <div class="select-genre">
-        <div class="select-btn">
-            <span class="sBtn-text">Genres</span>
-            <i class="ri-arrow-down-wide-line"></i>
-        </div>
-
-        <ul class="options-genre">
-            <li class="option-genre">
-                <span class="option-text">Action</span>
-            </li>
-
-            <li class="option-genre">
-                <span class="option-text">Adventure</span>
-            </li>
-
-            <li class="option-genre">
-                <span class="option-text">Animation</span>
-            </li>
-
-            <li class="option-genre">
-                <span class="option-text">Comedy</span>
-            </li>
-
-            <li class="option-genre">
-                <span class="option-text">Crime</span>
-            </li>
-
-            <li class="option-genre">
-                <span class="option-text">Drama</span>
-            </li>
-
-            <li class="option-genre">
-                <span class="option-text">Family</span>
-            </li>
-
-            <li class="option-genre">
-                <span class="option-text">Fantasy</span>
-            </li>
-
-            <li class="option-genre">
-                <span class="option-text">History</span>
-            </li>
-
-            <li class="option-genre">
-                <span class="option-text">Horror</span>
-            </li>
-            
-            <li class="option-genre">
-                <span class="option-text">Music</span>
-            </li>
-
-            <li class="option-genre">
-                <span class="option-text">Mistery</span>
-            </li>
-
-            <li class="option-genre">
-                <span class="option-text">Romance</span>
-            </li>
-
-            <li class="option-genre">
-                <span class="option-text">Science Fiction</span>
-            </li>
-
-            <li class="option-genre">
-                <span class="option-text">Thriller</span>
-            </li>
-
-            <li class="option-genre">
-                <span class="option-text">Western</span>
+                <input type="number" id="year" name="year" placeholder="Enter year">
             </li>
         </ul>
         <button type="submit" class="apply-btn" id="apply-btn">Apply</button>
     </div>
 
+    <div class="select-type">
+        <div class="select-btn">
+            <span class="sBtn-text">Diagram Type</span>
+            <i class="ri-arrow-down-wide-line"></i>
+        </div>
 
-    <div class="container">
-        <div class="movie-list" id="movie-list"></div>
+        <ul class="options">
+            <li class="option">
+                <span class="option-text">Bar</span>
+            </li>
+
+            <li class="option">
+                <span class="option-text">Pie</span>
+            </li>
+
+            <li class="option">
+                <span class="option-text">Line</span>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="container" id="statistics"></div></div>
+    <div class="buttons-container">
+        <button type="submit" class="export-webp" id="export-webp">WebP</button>
+        <button type="submit" class="export-svg" id="export-svg">SVG</button>
     </div>
 
     <div class="footer">
@@ -227,6 +138,7 @@
         </div>
     </div>
 
-    <script src="filter-script.js"></script>
+    <script src="statistics-script.js"></script>
+    <script src="small-search-script.js"></script>
 </body>
 </html>
