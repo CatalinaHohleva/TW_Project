@@ -2,10 +2,10 @@ const http = require('http');
 const url = require('url');
 const fs = require('fs');
 const path = require('path');
-const { Pool } = require('pg');    // PostgreSQL client for Node.js, specifically the Pool class for managing database connections
-const bcrypt = require('bcrypt');  // Library for hashing passwords
-const nodemailer = require('nodemailer'); //To send emails
-const dotenv = require('dotenv');  // .env
+const { Pool } = require('pg');
+const bcrypt = require('bcrypt');
+const nodemailer = require('nodemailer');
+const dotenv = require('dotenv');
 const { getNetflixDb, getDisneyDb } = require('./database');
 
 
@@ -100,6 +100,7 @@ const staticFiles = {
     '/description-page-script.js': { path: 'description-page-script.js', contentType: 'application/javascript'},
     '/edit_account.js': { path: 'edit_account.js', contentType: 'application/javascript'},
     '/filter-script.js': { path: 'filter-script.js', contentType: 'application/javascript'},
+    '/forgot_your_password.js': { path: 'forgot_your_password.js', contentType: 'application/javascript'},
     '/header_visibility.js': { path: 'header_visibility.js', contentType: 'application/javascript'},
     '/index.js': { path: 'index.js', contentType: 'application/javascript'},
     '/package.js': { path: 'package.js', contentType: 'application/javascript'},
@@ -1027,13 +1028,10 @@ const server = http.createServer(async (req, res) => {
                     // Check if an account with the given email already exists
                     pool.query('SELECT * FROM users WHERE email = $1', [email], (err, result) => {
                         if (err) {
-                            /*console.error('Database query error:', err);
+                            console.error('Database query error:', err);
                             res.statusCode = 404;
                             res.setHeader('Content-Type', 'application/json');
                             res.end(JSON.stringify({ success: false, message: 'Database error' }));
-                            return;*/
-                            res.writeHead(400);
-                            res.end(JSON.stringify({ error: 'Database error' }));
                             return;
                         }
         
@@ -1042,9 +1040,7 @@ const server = http.createServer(async (req, res) => {
                             res.setHeader('Content-Type', 'application/json');
                             res.end(JSON.stringify({ success: false, message: 'An account with this email already exists' }));
                             return;
-                            res.writeHead(400);
-                            res.end(JSON.stringify({ error: 'An account with this email already exists' }));
-                            return;
+                           
                         }
         
                         const otp = Math.floor(100000 + Math.random() * 900000).toString();
@@ -1059,10 +1055,6 @@ const server = http.createServer(async (req, res) => {
                                 res.setHeader('Content-Type', 'application/json');
                                 res.end(JSON.stringify({ success: false, message: 'Error saving OTP' }));
                                 return;
-
-                                res.writeHead(400);
-                            res.end(JSON.stringify({ error: 'Error saving OTP' }));
-                            return;
                             }
         
                             dotenv.config();
@@ -1070,14 +1062,14 @@ const server = http.createServer(async (req, res) => {
                             const transporter = nodemailer.createTransport({
                                 service: 'gmail',
                                 auth: {
-                                    user: process.env.EMAIL_USER, 
-                                    pass: process.env.EMAIL_PASS 
+                                    user: process.env.EMAIL_USER,
+                                    pass: process.env.EMAIL_PASS
                                 }
                             });
         
                             const mailOptions = {
-                                from: process.env.EMAIL_USER, 
-                                to: email,                    
+                                from: process.env.EMAIL_USER,
+                                to: email,
                                 subject: 'Your OTP Code',
                                 text: `Your OTP code is ${otp}`
                             };
