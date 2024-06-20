@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Account</title>
+    <link rel="stylesheet" href="edit_account.css">
+</head>
+<body>
+    <div class="login-logo">
+        <a href="home.html">MTSE</a>
+    </div>
+    <div class="wrapper">
+        <div id="error-box" class="error-box"></div>
+        <form id="edit_account_form">
+            <h2>Edit Account</h2>
+            <div class="profile-item">
+                <div class="profile-label">Name</div>
+                <div id="username" class="profile-value"></div>
+                <input type="text" id="editNameInput" class="edit-input" style="display: none;">
+                <button type="button" class="edit-btn" onclick="toggleEdit()">Edit</button>
+                <button type="button" class="save-btn" onclick="saveName()" style="display: none;">Save</button>
+                <button type="button" class="cancel-btn" onclick="cancelEdit()" style="display: none;">Cancel</button>
+            </div>
+            
+            <div class="profile-item">
+                <div class="profile-label">Email</div>
+                <div class="profile-value" id="email"></div>
+                <button type="button" class="edit-btn" onclick="editEmail()">Edit</button>
+            </div>
+            <div class="profile-item">
+                <div class="profile-label">Password</div>
+                <div class="profile-value">********</div>
+                <button type="button" class="edit-btn" onclick="editPassword()">Edit</button>
+            </div>
+            <button type="submit" class="button">Done</button>
+        </form>
+    </div>
+    <script src="edit_account.js"></script>
+</body>
+</html>

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Password reset assistance</title>
+        <title>Email update assistance</title>
         <link rel="stylesheet" type="text/css" href="registration_process.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
@@ -13,16 +13,17 @@
         </div>
         <div class="wrapper">
             <div id="error-box" class="error-box"></div>
-            <form id="forgot_your_password_form" action="email">
-                <h2>Recover your password</h2>
-                <h6>Enter the email address associated with your MTSE account</h6>
+            <form id="verify-new-email-form" action="otp">
+                <h2>Verify email address</h2>
+                <h6>To verify your email, we've sent you a One Time Password (OTP)</h6>
+                <div id="timer-description" class="timer">OTP will expire in: <span id="timer">5:00</span></div>
                 <div class="input-box">
-                    <input type="email" id="email" placeholder="Email" required>
-                    <i class='bx bx-envelope'></i>
+                    <input type="text" id="otp" placeholder="Enter OTP" required>
                 </div>
                 <button type="submit" class="button">Continue</button>
             </form>
         </div>
-        <script src="forgot_your_password.js"></script>
+        <script src="verify_new_email.js"></script>
+        <script src="timer.js"></script>
     </body>
 </html>

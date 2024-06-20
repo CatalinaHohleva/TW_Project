@@ -12,23 +12,24 @@
             <a href="home.html">MTSE</a>
         </div>
         <div class="wrapper">
-            <form action="register">
+            <div id="error-box" class="error-box"></div>
+            <form id="register-form" action="register">
                 <h1>Create account</h1>
                 <div class="input-box">
-                    <input type="text" placeholder="Username" required>
+                    <input type="text" id="username" placeholder="Username" required>
                     <i class='bx bx-user'></i>
                 </div>
                 <div class="input-box">
-                    <input type="email" placeholder="Email" required>
+                    <input type="email" id="email" placeholder="Email" required>
                     <i class='bx bx-envelope'></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="Password" required>
-                    <i class='bx bx-lock-alt' ></i>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <i class='bx bx-lock-alt' id="toggle-password"></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="Re-Enter password" required>
-                    <i class='bx bx-lock-alt' ></i>
+                    <input type="password" id="confirm-password" placeholder="Re-Enter password" required>
+                    <i class='bx bx-lock-alt' id="toggle-confirm-password"></i>
                 </div>
                 <button type="submit" class="button">Create your MTSE account</button>
                 <div class="register-link">
@@ -36,5 +37,7 @@
                 </div>
             </form>
         </div>
+        <script src="register.js"></script>
+        <script src="toggle_password.js"></script>
     </body>
 </html>
