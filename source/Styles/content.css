@@ -89,11 +89,16 @@ h2 {
 
 .movie img {
     width: 80%;
-    height: 70%;
+    height: 60%;
     border-radius: 5px;
 }
 
+.movie a {
+    text-decoration: none;
+}
+
 .movie h2 {
+    color: black;
     font-size: 18px;
     margin: 10px 0;
 }
