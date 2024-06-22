@@ -3,7 +3,7 @@ body{
     margin: 0;
     padding: 0;
     background: white;
-    width: 96%;
+    width: 97%;
 }
 
 .container {
@@ -125,6 +125,10 @@ h1 {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+.search_button:hover {
+    background-color : #88aed5;
 }
 
 
@@ -293,7 +297,29 @@ h1 {
     cursor : pointer;
 }
 
+.buttons-container {
+    position : relative;
+    display : flex;
+    margin-left: 28%;
+}
+
+.export-svg, .export-csv, .export-webp {
+    display : block;
+    margin : 30px auto;
+    padding : 10px 20px;
+    background-color : midnightblue;
+    color : #fff;
+    border : none;
+    border-radius : 50px;
+    font-size : 16px;
+    cursor : pointer;
+}
+
 .apply-btn:hover {
+    background-color : #88aed5;
+}
+
+.export-csv:hover, .export-svg:hover, .export-webp:hover {
     background-color : #88aed5;
 }
 

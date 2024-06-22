@@ -3,7 +3,7 @@ body{
     margin: 0;
     padding: 0;
     background: white;
-    width: 96%;
+    width: 97%;
 }
 
 .container {
@@ -66,6 +66,10 @@ body{
     background : rgb(192, 190, 190);
     border : transparent solid 4px;
     border-radius : 10px;
+}
+
+.search_button:hover {
+    background-color : #88aed5;
 }
 
 @media screen and (max-width: 800px) {

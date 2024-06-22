@@ -100,6 +100,10 @@ li {
     cursor: pointer;
 }
 
+.small-search_button:hover {
+    background-color : #88aed5;
+}
+
 .small-search_icon,
 .small-search_close{
     color: white;

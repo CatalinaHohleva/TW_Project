@@ -3,7 +3,7 @@ body{
     margin: 0;
     padding: 0;
     background: white;
-    width: 96%;
+    width: 96.5%;
 }
 
 #slider {
@@ -198,6 +198,10 @@ h2 {
     display: grid;
     place-items: center;
     cursor: pointer;
+}
+
+.search_button:hover {
+    background-color : #88aed5;
 }
 
 .search_icon,
