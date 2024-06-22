@@ -7,8 +7,10 @@ const API_KEY = 'c22daecb5ce9b93cd32db50478e6e0b5';
 const container = document.querySelector(".container");
 const backgroundPoster = document.getElementById("background-poster");
 const movieCast = document.getElementById("movie-cast");
+const movieRecomandations = document.getElementById("movie-recomandations");
 const videoGallery = document.getElementById("video-gallery");
 const castTitle = document.getElementById("cast-title");
+const recomandationTitle = document.getElementById("recomandations-title");
 
 function setBackground(imageUrl) {
     document.querySelector('.background-poster').style.backgroundImage = `url('${imageUrl}')`;
@@ -167,7 +169,7 @@ async function showMovieOrTvShowInfo(data) {
     backgroundPoster.innerHTML=``;
     
     console.log(data);
-    const { type, title, director, cast, country, date_added, release_year, rating, duration, listed_in, description} = data;
+    const { platform, type, title, director, cast, country, date_added, release_year, rating, duration, listed_in, description} = data;
     const posterPath = await fetchPosterPath(title, type);
     const backgroundPath = await fetchBackgroundPath(title, type);
 
@@ -194,7 +196,7 @@ async function showMovieOrTvShowInfo(data) {
     }
 
     if(listed_in) {
-        movieElement.innerHTML += `<li><p>${listed_in}</p></li>`;
+        movieElement.innerHTML += `<li><p>Genres: ${listed_in}</p></li>`;
     }
 
     if(description) {
@@ -213,11 +215,159 @@ async function showMovieOrTvShowInfo(data) {
         movieElement.innerHTML += `<li><p>Rating: ${rating}</p></li>`;
     }
 
+    const buttonsContainer = document.createElement('div');
+    buttonsContainer.classList.add('movie-buttons');
+
+    const email = localStorage.getItem('email');
+
+    const watchlistKey = `watchlist_${title}_${email}`;
+    const isInWatchlist = localStorage.getItem(watchlistKey) === 'true';
+
+    buttonsContainer.innerHTML = `
+        <div class="apply-btn" id="apply-btn">
+            <i class="${isInWatchlist ? 'ri-add-circle-fill' : 'ri-add-circle-line'} apply-icon"></i>
+        </div>`;
+
+    const role = localStorage.getItem('role');
+
+    if (role === 'admin') {
+        buttonsContainer.innerHTML += `<button type="submit" class="edit-btn" id="edit-btn">Edit</button>`;
+        buttonsContainer.innerHTML += `
+            <div class="delete-btn" id="delete-btn">
+                <i class="ri-delete-bin-line delete-icon" ></i>
+            </div>`;
+    }
+
+    movieElement.appendChild(buttonsContainer);
     backgroundPoster.appendChild(movieElement);
 
     await showVideoGallery(title, type);
 
     await showActors(cast);
+
+    await showRecomandations(listed_in, title);
+
+    document.getElementById('apply-btn').addEventListener('click', async function () {
+        const email = localStorage.getItem('email');
+        console.log(email);
+
+        const watchlistKey = `watchlist_${title}_${email}`;
+        const isInWatchlist = localStorage.getItem(watchlistKey) === 'true';
+
+        if(isInWatchlist === false) {
+            fetch('/addToWatchlist', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email , title })
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.success) {
+                    console.log(result.message);
+    
+                    document.querySelector('#apply-btn .apply-icon').classList.remove('ri-add-circle-line');
+                    document.querySelector('#apply-btn .apply-icon').classList.add('ri-add-circle-fill');
+    
+                    localStorage.setItem(watchlistKey, 'true');
+                } else {
+                    console.log('Failed to add title in watchlist: ' + result.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error adding title in watchlist:', error);
+                console.log('Failed to add title in watchlist.');
+            });
+        } else {
+            fetch('/delete_movie_watchlist', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email , title })
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.success) {
+                    console.log(result.message);
+    
+                    document.querySelector('#apply-btn .apply-icon').classList.remove('ri-add-circle-fill');
+                    document.querySelector('#apply-btn .apply-icon').classList.add('ri-add-circle-line');
+    
+                    localStorage.setItem(watchlistKey, 'false');
+                } else {
+                    console.log('Failed to delete title from watchlist: ' + result.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error deleting title from watchlist:', error);
+                console.log('Failed to delete title from watchlist.');
+            });
+        }
+
+    });
+
+    document.getElementById('edit-btn').addEventListener('click', async function(event) {
+        event.preventDefault();
+
+        const encodedTitle = encodeURIComponent(title);
+        const encodedType = encodeURIComponent(type);
+        const encodedDirector = encodeURIComponent(director);
+        const encodedCountry = encodeURIComponent(country);
+        const encodedCast = encodeURIComponent(cast);
+        const encodedReleaseYear = encodeURIComponent(release_year);
+        const encodedRating = encodeURIComponent(rating);
+        const encodedDuration = encodeURIComponent(duration);
+        const encodedListedIn = encodeURIComponent(listed_in);
+        const encodedDescription = encodeURIComponent(description);
+
+        window.location.href = `edit-movie.html?title=${encodedTitle}&type=${encodedType}&director=${encodedDirector}&country=${encodedCountry}&cast=${encodedCast}&releaseYear=${encodedReleaseYear}&rating=${encodedRating}&duration=${encodedDuration}&listedIn=${encodedListedIn}&description=${encodedDescription}`;
+    });
+
+    document.getElementById('delete-btn').addEventListener('click', async function(event) {
+        event.preventDefault();
+
+        const encodedTitle = encodeURIComponent(title);
+        const encodedPlatform = encodeURIComponent(platform);
+
+        window.location.href = `delete-movie.html?title=${encodedTitle}&platform=${encodedPlatform}`;
+    });
+}
+
+async function showRecomandations(listed_in, title) {
+    movieRecomandations.innerHTML = ``;
+
+    if (listed_in) {
+        recomandationTitle.innerHTML = `<h1>You may also like</h1>`;
+    }
+
+    const response = await fetch(`/get_recommendations?listed_in=${encodeURIComponent(listed_in)}&title=${encodeURIComponent(title)}`);
+    const data = await response.json();
+
+    if (data.success) {
+        const recommendations = data.recommendations;
+
+        for (const record of recommendations) {
+            const { title, type, release_year } = record;
+            const posterPath = await fetchPosterPath(title, type);
+
+            const encodedTitle = encodeURIComponent(title);
+
+            const movieElement = document.createElement('div');
+            movieElement.classList.add('movie');
+            movieElement.innerHTML = `
+                <a href="/descriptionPage.html?title=${encodedTitle}" target="_blank">
+                    <img src="${posterPath}" alt="${title}">
+                    <h2>${title}</h2>
+                    <p>${release_year}</p>
+                </a>`;
+
+            movieRecomandations.appendChild(movieElement);
+        }
+    } else {
+        console.error('Failed to fetch recommendations:', data.error);
+    }
 }
 
 async function showActors(cast) {
@@ -275,4 +425,5 @@ const urlParams = new URLSearchParams(window.location.search);
 const title = urlParams.get('title');
 console.log(title);
 const encodedTitle = encodeURIComponent(title);
+document.title = `${title}`;
 getMovieOrTvShowInfo(`http://127.0.0.1:8081/movieInfo?title=${encodedTitle}`);

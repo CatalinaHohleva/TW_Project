@@ -566,6 +566,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let filteredUrl = 'http://127.0.0.1:8081/';
 
     if (watchOption !== null && watchOption !== 'undefined' && yearOption !== null && yearOption !== 'undefined') {
+        const year = parseInt(yearOption, 10);
         filteredUrl += `statisticsByPlatformAndYear?watch=${encodeURIComponent(watchOption)}&year=${encodeURIComponent(yearOption)}`;
     } else if (watchOption !== null && watchOption !== 'undefined') {
         filteredUrl += `statisticsByPlatform?watch=${encodeURIComponent(watchOption)}`;
@@ -583,62 +584,134 @@ document.addEventListener('DOMContentLoaded', function() {
             if(watchOption !== null && watchOption !== 'undefined' && yearOption !== null && yearOption !== 'undefined') {
                 const year = parseInt(yearOption, 10);
                 filterStatisticsBarByPlatformAndYear(watchOption, year);
+
+                document.getElementById('export-csv').addEventListener('click', function() {
+                    const year = parseInt(yearOption, 10);
+                    exportAsCSVByPlatformAndYear(watchOption, year);
+                });
             } else if(yearOption !== null && yearOption !== 'undefined') {
                 const year = parseInt(yearOption, 10);
                 filterStatisticsBarByYear(year);
+
+                document.getElementById('export-csv').addEventListener('click', function() { 
+                    const year = parseInt(yearOption, 10);
+                    exportAsCSVByYear(year);
+                });  
             } else if(watchOption !== null && watchOption !== 'undefined') {
                 filterStatisticsBarByPlatform(watchOption);
+
+                document.getElementById('export-csv').addEventListener('click', function() { 
+                    exportAsCSVByPlatform(watchOption);
+                });
             } else {
                 const max = 2021;
                 const min = 1925;
                 const randomYear = Math.floor(Math.random() * (max - min + 1)) + min;
                 filterStatisticsBarByYear(randomYear);
+
+                document.getElementById('export-csv').addEventListener('click', function() { 
+                    exportAsCSVByYear(randomYear);
+                }); 
             }
         } else if(typeOption === 'Pie') {
             if(watchOption !== null && watchOption !== 'undefined' && yearOption !== null && yearOption !== 'undefined') {
                 const year = parseInt(yearOption, 10);
                 filterStatisticsPieByPlatformAndYear(watchOption, year);
+
+                document.getElementById('export-csv').addEventListener('click', function() {
+                    const year = parseInt(yearOption, 10);
+                    exportAsCSVByPlatformAndYear(watchOption, year);
+                });                
             } else if(yearOption !== null && yearOption !== 'undefined') {
                 const year = parseInt(yearOption, 10);
                 filterStatisticsPieByYear(year);
+                
+                document.getElementById('export-csv').addEventListener('click', function() { 
+                    const year = parseInt(yearOption, 10);
+                    exportAsCSVByYear(year);
+                });  
             } else if(watchOption !== null && watchOption !== 'undefined') {
                 filterStatisticsPieByPlatform(watchOption);
+
+                document.getElementById('export-csv').addEventListener('click', function() { 
+                    exportAsCSVByPlatform(watchOption);
+                });
             } else {
                 const max = 2021;
                 const min = 1925;
                 const randomYear = Math.floor(Math.random() * (max - min + 1)) + min;
                 filterStatisticsPieByYear(randomYear);
+
+                document.getElementById('export-csv').addEventListener('click', function() { 
+                    exportAsCSVByYear(randomYear);
+                }); 
             }
         } else if(typeOption === 'Line') {
             if(watchOption !== null && watchOption !== 'undefined' && yearOption !== null && yearOption !== 'undefined') {
                 const year = parseInt(yearOption, 10);
                 filterStatisticsLineByPlatformAndYear(watchOption, year);
+
+                document.getElementById('export-csv').addEventListener('click', function() {
+                    const year = parseInt(yearOption, 10);
+                    exportAsCSVByPlatformAndYear(watchOption, year);
+                });       
             } else if(yearOption !== null && yearOption !== 'undefined') {
                 const year = parseInt(yearOption, 10);
                 filterStatisticsLineByYear(year);
+  
+                document.getElementById('export-csv').addEventListener('click', function() { 
+                    const year = parseInt(yearOption, 10);
+                    exportAsCSVByYear(year);
+                });  
             } else if(watchOption !== null && watchOption !== 'undefined') {
                 filterStatisticsLineByPlatform(watchOption);
+
+                document.getElementById('export-csv').addEventListener('click', function() { 
+                    exportAsCSVByPlatform(watchOption);
+                });
             } else {
                 const max = 2021;
                 const min = 1925;
                 const randomYear = Math.floor(Math.random() * (max - min + 1)) + min;
                 filterStatisticsLineByYear(randomYear);
+
+                document.getElementById('export-csv').addEventListener('click', function() { 
+                    exportAsCSVByYear(randomYear);
+                }); 
             }
         }
     } else {
         if(watchOption !== null && watchOption !== 'undefined' && yearOption !== null && yearOption !== 'undefined') {
             const year = parseInt(yearOption, 10);
             filterStatisticsBarByPlatformAndYear(watchOption, year);
+
+            document.getElementById('export-csv').addEventListener('click', function() {
+                const year = parseInt(yearOption, 10);
+                exportAsCSVByPlatformAndYear(watchOption, year);
+            });            
         } else if(yearOption !== null && yearOption !== 'undefined') {
             const year = parseInt(yearOption, 10);
             filterStatisticsBarByYear(year);
+            
+            document.getElementById('export-csv').addEventListener('click', function() { 
+                const year = parseInt(yearOption, 10);
+                exportAsCSVByYear(year);
+            });  
         } else if(watchOption !== null && watchOption !== 'undefined') {
             filterStatisticsBarByPlatform(watchOption);
+
+            document.getElementById('export-csv').addEventListener('click', function() { 
+                exportAsCSVByPlatform(watchOption);
+            });
         } else {
             const max = 2021;
             const min = 1925;
             const randomYear = Math.floor(Math.random() * (max - min + 1)) + min;
             filterStatisticsBarByYear(randomYear);
+            
+            document.getElementById('export-csv').addEventListener('click', function() { 
+                exportAsCSVByYear(randomYear);
+            });  
         }
     }
 

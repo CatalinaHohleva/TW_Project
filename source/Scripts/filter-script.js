@@ -15,6 +15,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    const page = window.location.pathname.split('/').pop();
+    let optionType = '';
+    let selectButtonTextType = '';
+    let selectedOptionType = '';
+    let selectButtonType = '';
+    let optionsType = '';
+
+    if(page === 'SearchPage.html' || page === 'watchlist.html') {
+        optionType = document.querySelector(".select-type");
+        selectButtonType = optionType.querySelector(".select-btn");
+        optionsType = optionType.querySelectorAll(".option");
+        selectButtonTextType = optionType.querySelector(".sBtn-text");
+
+        selectButtonType.addEventListener("click", () => optionType.classList.toggle("active"));
+
+        optionsType.forEach(option => {
+            option.addEventListener("click", () => {
+                selectedOptionType = option.querySelector(".option-text").innerText;
+                selectButtonTextType.innerText = selectedOptionType;
+                optionType.classList.remove("active");
+            });
+        });
+
+        document.querySelector('.select-watch').style.margin = '340px 7px';
+        document.querySelector('.select-type').style.margin = '260px 7px';
+        document.querySelector('.select-year').style.margin = '420px 7px';
+        document.querySelector('.select-genre').style.margin = '500px 7px';
+    }
+
     const optionWatch = document.querySelector(".select-watch");
     const selectButtonWatch = optionWatch.querySelector(".select-btn");
     const optionsWatch = optionWatch.querySelectorAll(".option");
@@ -99,7 +128,11 @@ document.addEventListener('DOMContentLoaded', function() {
         applyButton.addEventListener('click', () => {
             currentPage = window.location.pathname.split('/').pop();
 
-            window.location.href = `${currentPage}?sort=${encodeURIComponent(selectedOption)}&watch=${encodeURIComponent(selectedOptionWatch)}&genre=${encodeURIComponent(selectedOptionGenre)}&year1=${encodeURIComponent(selectedYear1)}&year2=${encodeURIComponent(selectedYear2)}`;
+            if(page === 'SearchPage.html' || page === 'watchlist.html') {
+                window.location.href = `${currentPage}?sort=${encodeURIComponent(selectedOption)}&watch=${encodeURIComponent(selectedOptionWatch)}&genre=${encodeURIComponent(selectedOptionGenre)}&year1=${encodeURIComponent(selectedYear1)}&year2=${encodeURIComponent(selectedYear2)}&type=${encodeURIComponent(selectedOptionType)}`;
+            } else {
+                window.location.href = `${currentPage}?sort=${encodeURIComponent(selectedOption)}&watch=${encodeURIComponent(selectedOptionWatch)}&genre=${encodeURIComponent(selectedOptionGenre)}&year1=${encodeURIComponent(selectedYear1)}&year2=${encodeURIComponent(selectedYear2)}`;
+            }
         });
     } else {
         console.error('Apply button not found!');
@@ -148,6 +181,9 @@ document.addEventListener('DOMContentLoaded', function() {
             noResultsElement.classList.add('no-results');
             noResultsElement.innerHTML = `<p>No results found for "${searchTerm}"</p>`;
             movieList.appendChild(noResultsElement);
+
+            document.querySelector('.footer').style.marginTop = '700px';
+            document.querySelector('.footer').style.width = '105%';
         } else {
             for (const movie of data) {
                 const { title, type, release_year } = movie;
@@ -163,6 +199,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p>${release_year}</p>
                 </a>`;
 
+                document.querySelector('.footer').style.marginTop = '200px';
+
                 movieList.appendChild(movieElement);
             }
         }
@@ -175,6 +213,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let genreOption = urlParams.get('genre');
     let year1Option = urlParams.get('year1');
     let year2Option = urlParams.get('year2');
+    let typeOption = 'undefined';
+    if(page === 'SearchPage.html' || page === 'watchlist.html') {
+        typeOption = urlParams.get('type');
+    }
 
     console.log(year1Option);
     console.log(year2Option);
@@ -189,53 +231,86 @@ document.addEventListener('DOMContentLoaded', function() {
         currentPage = currentPage.charAt(0).toLowerCase() + currentPage.slice(1);
     }
 
+    const email = localStorage.getItem('email');
+    console.log(email);
+
     let ALL_MOVIES_TVSHOWS_URL;
     let SEARCH_URL;
     if(currentPage === 'searchPage') {
         ALL_MOVIES_TVSHOWS_URL = `http://127.0.0.1:8081/all`;
         SEARCH_URL = `http://127.0.0.1:8081/search?term=${encodeURIComponent(searchTerm)}`;
     } else {
-        ALL_MOVIES_TVSHOWS_URL = `http://127.0.0.1:8081/all/${currentPage}`;
-        SEARCH_URL = `http://127.0.0.1:8081/search/${currentPage}?term=${encodeURIComponent(searchTerm)}`;
-        filteredUrl += `/${currentPage}`;
+        SEARCH_URL = `http://127.0.0.1:8081/search/${currentPage}?email=${encodeURIComponent(email)}&term=${encodeURIComponent(searchTerm)}`;
+        filteredUrl += `/${currentPage}?email=${encodeURIComponent(email)}`;
     }
 
     let hasOptions = false;
 
     if (sortOption !== null && sortOption !== 'undefined') {
-        if(hasOptions === false) {
+        if(hasOptions === false && currentPage !== 'searchPage') {
+            hasOptions = true;
+            filteredUrl += `&`;
+        } else if(currentPage === 'searchPage' && hasOptions === false){
             hasOptions = true;
             filteredUrl += `?`;
         }
+
         filteredUrl += `sort=${encodeURIComponent(sortOption)}&`;
     }
     if (watchOption !== null && watchOption !== 'undefined') {
-        if(hasOptions === false) {
+        if(hasOptions === false && currentPage !== 'searchPage') {
+            hasOptions = true;
+            filteredUrl += `&`;
+        } else if(currentPage === 'searchPage' && hasOptions === false){
             hasOptions = true;
             filteredUrl += `?`;
         }
+
         filteredUrl += `watch=${encodeURIComponent(watchOption)}&`;
     }
     if (genreOption !== null && genreOption !== 'undefined') {
-        if(hasOptions === false) {
+        if(hasOptions === false && currentPage !== 'searchPage') {
+            hasOptions = true;
+            filteredUrl += `&`;
+        } else if(currentPage === 'searchPage' && hasOptions === false){
             hasOptions = true;
             filteredUrl += `?`;
         }
+
         filteredUrl += `genre=${encodeURIComponent(genreOption)}&`;
     }
     if (year1Option !== null && year1Option !== 'undefined') {
-        if(hasOptions === false) {
+        if(hasOptions === false && currentPage !== 'searchPage') {
+            hasOptions = true;
+            filteredUrl += `&`;
+        } else if(currentPage === 'searchPage' && hasOptions === false){
             hasOptions = true;
             filteredUrl += `?`;
         }
+
         filteredUrl += `year1=${encodeURIComponent(year1Option)}&`;
     }
     if (year2Option !== null && year2Option !== 'undefined') {
-        if(hasOptions === false) {
+        if(hasOptions === false && currentPage !== 'searchPage') {
+            hasOptions = true;
+            filteredUrl += `&`;
+        } else if(currentPage === 'searchPage' && hasOptions === false){
             hasOptions = true;
             filteredUrl += `?`;
         }
+
         filteredUrl += `year2=${encodeURIComponent(year2Option)}&`;
+    }
+    if (typeOption && typeOption !== 'undefined') {
+        if(hasOptions === false && currentPage !== 'searchPage') {
+            hasOptions = true;
+            filteredUrl += `&`;
+        } else if(currentPage === 'searchPage' && hasOptions === false){
+            hasOptions = true;
+            filteredUrl += `?`;
+        }
+        
+        filteredUrl += `type=${encodeURIComponent(typeOption)}&`;
     }
 
     if(hasOptions === true) {
@@ -248,9 +323,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log(filteredUrl);
 
-    if(searchTerm) {
+    if(searchTerm !== null && searchTerm !== 'undefined') {
         getMoviesOrTvShows(SEARCH_URL, movieList);
+        document.title = `Search for "${searchTerm}"`;
     } else {
         getMoviesOrTvShows(filteredUrl, movieList);
     }
+
 });
