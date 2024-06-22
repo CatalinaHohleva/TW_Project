@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Movie/Tv Show Info</title>
+    <link rel="stylesheet" href="edit_account.css">
+</head>
+<body>
+    <div class="login-logo">
+        <a href="home.html">MTSE</a>
+    </div>
+    <div class="wrapper">
+        <div id="error-box" class="error-box"></div>
+        <form id="edit_movie_form">
+            <h2>Edit Movie/Tv Show Info</h2>
+            <div class="profile-item">
+                <div class="profile-label">Title</div>
+                <div id="title" class="profile-value"></div>
+                <input type="text" id="editTitleInput" class="edit-input" style="display: none;">
+                <button type="button" class="editTitle-btn" onclick="toggleEditTitle()">Edit</button>
+                <button type="button" class="saveTitle-btn" onclick="saveTitle()" style="display: none;">Save</button>
+                <button type="button" class="cancelTitle-btn" onclick="cancelEditTitle()" style="display: none;">Cancel</button>
+            </div>
+
+            <div class="profile-item">
+                <div class="profile-label">Type</div>
+                <div id="type" class="profile-value"></div>
+                <input type="text" id="editTypeInput" class="edit-input" style="display: none;">
+                <button type="button" class="editType-btn" onclick="toggleEditType()">Edit</button>
+                <button type="button" class="saveType-btn" onclick="saveType()" style="display: none;">Save</button>
+                <button type="button" class="cancelType-btn" onclick="cancelEditType()" style="display: none;">Cancel</button>
+            </div>
+
+            <div class="profile-item">
+                <div class="profile-label">Platform</div>
+                <div id="platform" class="profile-value"></div>
+                <input type="text" id="editPlatformInput" class="edit-input" style="display: none;">
+                <button type="button" class="editPlatform-btn" onclick="toggleEditPlatform()">Edit</button>
+                <button type="button" class="savePlatform-btn" onclick="savePlatform()" style="display: none;">Save</button>
+                <button type="button" class="cancelPlatform-btn" onclick="cancelEditPlatform()" style="display: none;">Cancel</button>
+            </div>
+
+            <div class="profile-item">
+                <div class="profile-label">Director</div>
+                <div id="director" class="profile-value"></div>
+                <input type="text" id="editDirectorInput" class="edit-input" style="display: none;">
+                <button type="button" class="editDirector-btn" onclick="toggleEditDirector()">Edit</button>
+                <button type="button" class="saveDirector-btn" onclick="saveDirector()" style="display: none;">Save</button>
+                <button type="button" class="cancelDirector-btn" onclick="cancelEditDirector()" style="display: none;">Cancel</button>
+            </div>
+
+            <div class="profile-item">
+                <div class="profile-label">Country</div>
+                <div id="country" class="profile-value"></div>
+                <input type="text" id="editCountryInput" class="edit-input" style="display: none;">
+                <button type="button" class="editCountry-btn" onclick="toggleEditCountry()">Edit</button>
+                <button type="button" class="saveCountry-btn" onclick="saveCountry()" style="display: none;">Save</button>
+                <button type="button" class="cancelCountry-btn" onclick="cancelEditCountry()" style="display: none;">Cancel</button>
+            </div>
+
+            <div class="profile-item">
+                <div class="profile-label">Cast</div>
+                <div id="cast" class="profile-value"></div>
+                <input type="text" id="editCastInput" class="edit-input" style="display: none;">
+                <button type="button" class="editCast-btn" onclick="toggleEditCast()">Edit</button>
+                <button type="button" class="saveCast-btn" onclick="saveCast()" style="display: none;">Save</button>
+                <button type="button" class="cancelCast-btn" onclick="cancelEditCast()" style="display: none;">Cancel</button>
+            </div>
+
+            <div class="profile-item">
+                <div class="profile-label">Release year</div>
+                <div id="releaseYear" class="profile-value"></div>
+                <input type="text" id="editReleaseYearInput" class="edit-input" style="display: none;">
+                <button type="button" class="editReleaseYear-btn" onclick="toggleEditReleaseYear()">Edit</button>
+                <button type="button" class="saveReleaseYear-btn" onclick="saveReleaseYear()" style="display: none;">Save</button>
+                <button type="button" class="cancelReleaseYear-btn" onclick="cancelEditReleaseYear()" style="display: none;">Cancel</button>
+            </div>
+
+            <div class="profile-item">
+                <div class="profile-label">Rating</div>
+                <div id="rating" class="profile-value"></div>
+                <input type="text" id="editRatingInput" class="edit-input" style="display: none;">
+                <button type="button" class="editRating-btn" onclick="toggleEditRating()">Edit</button>
+                <button type="button" class="saveRating-btn" onclick="saveRating()" style="display: none;">Save</button>
+                <button type="button" class="cancelRating-btn" onclick="cancelEditRating()" style="display: none;">Cancel</button>
+            </div>
+
+            <div class="profile-item">
+                <div class="profile-label">Duration</div>
+                <div id="duration" class="profile-value"></div>
+                <input type="text" id="editDurationInput" class="edit-input" style="display: none;">
+                <button type="button" class="editDuration-btn" onclick="toggleEditDuration()">Edit</button>
+                <button type="button" class="saveDuration-btn" onclick="saveDuration()" style="display: none;">Save</button>
+                <button type="button" class="cancelDuration-btn" onclick="cancelEditDuration()" style="display: none;">Cancel</button>
+            </div>
+
+            <div class="profile-item">
+                <div class="profile-label">Genres</div>
+                <div id="listedIn" class="profile-value"></div>
+                <input type="text" id="editListedInInput" class="edit-input" style="display: none;">
+                <button type="button" class="editListedIn-btn" onclick="toggleEditListedIn()">Edit</button>
+                <button type="button" class="saveListedIn-btn" onclick="saveListedIn()" style="display: none;">Save</button>
+                <button type="button" class="cancelListedIn-btn" onclick="cancelEditListedIn()" style="display: none;">Cancel</button>
+            </div>
+
+            <div class="profile-item">
+                <div class="profile-label">Description</div>
+                <div id="description" class="profile-value"></div>
+                <input type="text" id="editDescriptionInput" class="edit-input" style="display: none;">
+                <button type="button" class="editDescription-btn" onclick="toggleEditDescription()">Edit</button>
+                <button type="button" class="saveDescription-btn" onclick="saveDescription()" style="display: none;">Save</button>
+                <button type="button" class="cancelDescription-btn" onclick="cancelEditDescription()" style="display: none;">Cancel</button>
+            </div>
+            
+            <button type="submit" class="button">Done</button>
+        </form>
+    </div>
+    <script src="edit-movie.js"></script>
+</body>
+</html>

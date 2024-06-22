@@ -29,8 +29,23 @@
                         <li>
                             <a href="sign_in.html" class="login-btn">Sign in</a>
                         </li>
+                        <!--<li>
+                            <a href="register.html" class="register-btn">Sign up</a>
+                        </li>
+                        <li>-->
+                            <!--<a href="user_profile.html" class="profile-btn">My Profile</a>-->
                         <li>
-                            <a href="register.html" class="register-btn">Sign Up</a>
+                            <div class="profile-menu">
+                                <a class="profile-btn">My Profile</a>
+                                <div class="dropdown-content">
+                                    <a href="admin_users_list.html" id="manage-users">Manage users</a> <!-- Initially hidden for non-admin users -->
+                                    <a href="edit_account.html">Edit account</a>
+                                    <a href="add-movie.html">Add Movie/ Tv Show</a>
+                                    <a href="watchlist.html">Watchlist</a>
+                                    <a href="delete_account.html">Delete account</a>
+                                    <a href="home.html" id="sign-out">Sign out</a>
+                                </div>
+                            </div>
                         </li>
                         <li>
                             <form action="search" class="small-search" id="search-bar">
@@ -102,10 +117,12 @@
     </div>
 
 
-    <div class="container" id="statistics"></div></div>
-    <div class="buttons-container">
-        <button type="submit" class="export-webp" id="export-webp">WebP</button>
-        <button type="submit" class="export-svg" id="export-svg">SVG</button>
+    <div class="container" id="statistics"></div>
+        <div class="buttons-container">
+            <button type="submit" class="export-csv" id="export-csv">CSV</button>
+            <button type="submit" class="export-webp" id="export-webp">WebP</button>
+            <button type="submit" class="export-svg" id="export-svg">SVG</button>
+        </div>
     </div>
 
     <div class="footer">
@@ -140,5 +157,8 @@
 
     <script src="statistics-script.js"></script>
     <script src="small-search-script.js"></script>
+    <script src="user_profile.js"></script>
+    <script src="sign_out.js"></script>
+    <script src="header_visibility.js"></script>
 </body>
 </html>

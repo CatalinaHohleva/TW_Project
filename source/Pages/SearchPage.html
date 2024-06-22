@@ -28,8 +28,23 @@
                         <li>
                             <a href="sign_in.html" class="login-btn">Sign in</a>
                         </li>
+                        <!--<li>
+                            <a href="register.html" class="register-btn">Sign up</a>
+                        </li>
+                        <li>-->
+                            <!--<a href="user_profile.html" class="profile-btn">My Profile</a>-->
                         <li>
-                            <a href="register.html" class="register-btn">Sign Up</a>
+                            <div class="profile-menu">
+                                <a class="profile-btn">My Profile</a>
+                                <div class="dropdown-content">
+                                    <a href="admin_users_list.html" id="manage-users">Manage users</a> <!-- Initially hidden for non-admin users -->
+                                    <a href="edit_account.html">Edit account</a>
+                                    <a href="add-movie.html">Add Movie/ Tv Show</a>
+                                    <a href="watchlist.html">Watchlist</a>
+                                    <a href="delete_account.html">Delete account</a>
+                                    <a href="home.html" id="sign-out">Sign out</a>
+                                </div>
+                            </div>
                         </li>
                         <li>
                             <form action="search" class="small-search" id="search-bar">
@@ -74,6 +89,25 @@
 
             <li class="option">
                 <span class="option-text">Title (Z-A)</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="select-type">
+        <div class="select-btn">
+            <span class="sBtn-text">Type</span>
+            <i class="ri-arrow-down-wide-line"></i>
+        </div>
+
+        <ul class="options">
+            <li class="option">
+                <i class="ri-film-line" style="color: rgb(49, 28, 207);"></i>
+                <span class="option-text">Movie</span>
+            </li>
+
+            <li class="option">
+                <i class="ri-tv-fill" style="color: rgb(63, 60, 60);"></i>
+                <span class="option-text">TV Show</span>
             </li>
         </ul>
     </div>
@@ -188,7 +222,6 @@
         <button type="submit" class="apply-btn" id="apply-btn">Apply</button>
     </div>
 
-
     <div class="container">
         <div class="movie-list" id="movie-list"></div>
     </div>
@@ -225,5 +258,8 @@
 
     <!--<script src="search-script.js"></script>-->
     <script src="filter-script.js"></script>
+    <script src="user_profile.js"></script>
+    <script src="sign_out.js"></script>
+    <script src="header_visibility.js"></script>
 </body>
 </html>
