@@ -380,12 +380,15 @@ async function showActors(cast) {
     const actors = cast.split(',').map(actor => actor.trim());
     for (const actor of actors) {
         const profilePath = await fetchProfilePath(actor);
+    
+        const encodedActor = encodeURIComponent(actor);
 
         const actorElement = document.createElement('div');
         actorElement.classList.add('actor');
         actorElement.innerHTML = `
-            <img src="${profilePath}" alt="${actor}">
-            <h2>${actor}</h2>`;
+            <a href="/actorPage.html?actor=${encodedActor}" target="_blank">
+                <img src="${profilePath}" alt="${actor}">
+            <h2>${actor}</h2> </a>`;
         movieCast.appendChild(actorElement);
     }
 }
