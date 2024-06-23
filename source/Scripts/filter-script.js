@@ -38,10 +38,10 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        document.querySelector('.select-watch').style.margin = '340px 7px';
-        document.querySelector('.select-type').style.margin = '260px 7px';
-        document.querySelector('.select-year').style.margin = '420px 7px';
-        document.querySelector('.select-genre').style.margin = '500px 7px';
+        document.querySelector('.select-watch').style.margin = '270px 7px';
+        document.querySelector('.select-type').style.margin = '190px 7px';
+        document.querySelector('.select-year').style.margin = '350px 7px';
+        document.querySelector('.select-genre').style.margin = '430px 7px';
     }
 
     const optionWatch = document.querySelector(".select-watch");
