@@ -3,7 +3,7 @@ body{
     margin: 0;
     padding: 0;
     background: white;
-    width: 96%;
+    width: 98%;
 }
 
 .container {
@@ -37,7 +37,7 @@ body{
     opacity: 0.75;
 }
 
-.poster {
+.poster, .profile {
     position: absolute;
     top: 23px; 
     left: 20px; 
@@ -62,12 +62,28 @@ body{
     list-style-type: disc;
 }
 
-.movie-info li {
+.actor-info {
+    position: absolute;
+    top: 0px;
+    left: 60%;  
+    transform: translateX(-50%);
+    width: 90%; 
+    max-width: 720px; 
+    height: 90%; 
+    padding: 20px;
+    margin-top: 25vh;
+    background-color: transparent; 
+    color: black;
+    z-index: 2;
+    list-style-type: disc;
+}
+
+.movie-info li, .actor-info li {
     margin-bottom: 15px; 
 }
 
 .movie-info h1,
-.movie-info p {
+.movie-info p, .actor-info h1, .actor-info p {
     margin: 5px 0;
     font-weight: bold;
 }
@@ -86,6 +102,13 @@ h1 {
     padding: 10px;
 }
 
+.movie-actor-list {
+    display: flex;
+    overflow-x: auto;
+    flex-direction: row;
+    padding: 10px;
+}
+
 .movie {
     background-color: transparent;
     border-radius: 5px;
@@ -97,8 +120,8 @@ h1 {
 }
 
 .movie img {
-    width: 80%;
-    height: 60%;
+    width: 90%;
+    height: 70%;
     border-radius: 5px;
 }
 
@@ -134,12 +157,17 @@ h1 {
     margin-right: 20px;
 }
 
+.actor a {
+    text-decoration: none;
+}
+
 .actor img {
     width: 70%;
     border-radius: 5px;
 }
 
 .actor h2 {
+    color: black;
     font-size: 18px;
     margin: 10px 0;
 }
@@ -204,6 +232,10 @@ iframe {
     color: #666;
 }
 
+.movie-list-title {
+    margin-top: 50px;
+}
+
 ::-webkit-scrollbar {
     height: 10px;
     width: 0px;
@@ -245,7 +277,7 @@ iframe {
     color: white;
     border: none;
     border-radius: 50px;
-    padding: 10px 23px;
+    padding: 15px 28px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -307,6 +339,22 @@ iframe {
     .movie-info p {
         font-size: 14px;
     }
+
+    .actor-info {
+        left: 70%; 
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .actor-info {
+        left: 80%; 
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .actor-info {
+        left: 90%; 
+    }
 }
 
 @media screen and (max-width: 1000px) {
@@ -319,6 +367,10 @@ iframe {
     .background-poster {
         margin-top: 8vh;
         margin-left: -50px;
+    }
+
+    .poster {
+        width: 300px; 
     }
 
     .movie-shot {
@@ -343,6 +395,22 @@ iframe {
         gap: 1vh;
     }
 
+    .actor-info {
+        left: 100%;
+    }
+}
+
+@media screen and (max-width: 817px) {
+    .actor-info {
+        left: 50%; 
+        color: black;
+        text-align: center;
+        margin-top: 600px;
+    }
+
+    .movie-list-title {
+        margin-top: 350px;
+    }
 }
 
 @media screen and (max-width: 500px) {
