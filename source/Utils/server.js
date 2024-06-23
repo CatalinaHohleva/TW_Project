@@ -57,12 +57,14 @@ const disconnectDisneyDb = async () => {
 
 const staticFiles = {
     '/': { path: 'home.html', contentType: 'text/html' },
+    '/actorBackground.jpg': { path: 'actorBackground.jpg', contentType: 'image/jpeg' },
     '/background1.jpg': { path: 'background1.jpg', contentType: 'image/jpeg' },
     '/background2.jpg': { path: 'background2.jpg', contentType: 'image/jpeg' },
     '/background3.jpg': { path: 'background3.jpg', contentType: 'image/jpeg' },
     '/background4.jpg': { path: 'background4.jpg', contentType: 'image/jpeg' },
     '/film-reel.jpg': { path: 'film-reel.jpg', contentType: 'image/jpeg' },
     '/AboutUs.html': { path: 'AboutUs.html', contentType: 'text/html' },
+    '/actorPage.html': { path: 'actorPage.html', contentType: 'text/html' },
     '/add-movie.html': { path: 'add-movie.html', contentType: 'text/html' },
     '/admin_users_list.html': { path: 'admin_users_list.html', contentType: 'text/html' },
     '/change_email.html': { path: 'change_email.html', contentType: 'text/html' },
@@ -96,6 +98,7 @@ const staticFiles = {
     '/footer.css': { path: 'footer.css', contentType: 'text/css' },
     '/header.css': { path: 'header.css', contentType: 'text/css' },
     '/registration_process.css': { path: 'registration_process.css', contentType: 'text/css' },
+    '/actorPage.js': { path: 'actorPage.js', contentType: 'application/javascript'},
     '/admin_users_list.js': { path: 'admin_users_list.js', contentType: 'application/javascript'},
     '/add-movie.js': { path: 'add-movie.js', contentType: 'application/javascript'},
     '/change_email.js': { path: 'change_email.js', contentType: 'application/javascript'},
@@ -1827,6 +1830,42 @@ const server = http.createServer(async (req, res) => {
                 res.statusCode = 200;
                 res.setHeader('Content-Type', 'application/json');
                 res.end(JSON.stringify({ success: true, recommendations }));
+        
+            } catch (err) {
+                console.error('Error processing request:', err);
+                res.statusCode = 500;
+                res.setHeader('Content-Type', 'application/json');
+                res.end(JSON.stringify({ success: false, error: 'Error processing request' }));
+            }
+        } else if (req.method === 'GET' && req.url.startsWith('/get_movie_list')) {
+            //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            const queryObject = url.parse(req.url, true).query;
+            const name = queryObject.name;
+
+            if (!name) {
+                res.statusCode = 400;
+                res.setHeader('Content-Type', 'application/json');
+                res.end(JSON.stringify({ success: false, error: 'Missing name parameter' }));
+                return;
+            }
+        
+            try {
+                await connectNetflixDb();
+                await connectDisneyDb();
+        
+                let movieList = [];
+                
+                const netflixQuery = `SELECT title, type, release_year FROM netflix WHERE "cast" ILIKE '%' || $1 || '%'`;
+                const disneyQuery = `SELECT title, type, release_year FROM disney_plus WHERE "cast" ILIKE '%' || $1 || '%'`;
+                    
+                const netflixResult = await netflixClient.query(netflixQuery, [name]);
+                const disneyResult = await disneyClient.query(disneyQuery, [name]);
+                    
+                movieList = movieList.concat(netflixResult.rows, disneyResult.rows);
+        
+                res.statusCode = 200;
+                res.setHeader('Content-Type', 'application/json');
+                res.end(JSON.stringify({ success: true, movieList }));
         
             } catch (err) {
                 console.error('Error processing request:', err);
