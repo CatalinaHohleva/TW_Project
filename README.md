@@ -1,5 +1,3 @@
-##Documentatie
-
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -45,17 +43,21 @@
                         <li><a href="#login-page">3.1.2 Pagina de autentificare </a></li>
                         <li><a href="#signup-page">3.1.3 Pagina de înregistrare </a></li>
                         <li><a href="#resetPassword-page">3.1.4 Pagina de resetarea a parolei </a></li>
-                        <li><a href="#home-page">3.1.5 Pagina acasă </a></li>
-                        <li><a href="#movies">3.1.6 Pagina de explorare a filmelor </a></li>
-                        <li><a href="#tvShows">3.1.7 Pagina de explorare a serialelor </a></li>
-                        <li><a href="movieTvShow-page">3.1.8 Pagina de vizualizare a informatiilor despre un anume film/serial </a></li>
-                        <li><a href="#about">3.1.9 Pagina informativa </a></li>
-                        <li><a href="#help">3.1.10 Pagina de ajutor </a></li>
-                        <li><a href="#profile">3.1.11 Pagina de profil </a></li>
-                        <li><a href="#error400">3.1.12 Pagina 400 </a></li>
-                        <li><a href="#error404">3.1.13 Pagina 404 </a></li>
-                        <li><a href="#admin">3.1.14 Pagina administratorului </a></li>
-                        <li><a href="#changepass">3.1.15 Pagina de schimbare a parolei </a></li>
+                        <li><a href="#editAccount-page">3.1.5 Pagina de editare a contului </a></li>
+                        <li><a href="#deleteAccount-page">3.1.6 Pagina de stergere a contului </a></li>
+                        <li><a href="#signout-page">3.1.7 Pagina de deconectare</a></li>
+                        <li><a href="#mangeUsers-page">3.1.8 Pagina de administrare a utilizatorilor</a></li>
+                        <li><a href="#addMovie-page">3.1.9 Pagina de adaugare a unui film sau serial</a></li>
+                        <li><a href="#watchlist-page">3.1.10 Pagina de vizualizare a watchlist-ului</a></li>
+                        <li><a href="#home-page">3.1.11 Pagina acasă</a></li>
+                        <li><a href="#movies">3.1.12 Pagina de explorare a filmelor </a></li>
+                        <li><a href="#tvShows">3.1.13 Pagina de explorare a serialelor </a></li>
+                        <li><a href="movieTvShow-page">3.1.14 Pagina de vizualizare a informatiilor despre un specific film sau serial </a></li>
+                        <li><a href="actor-page">3.1.15 Pagina de vizualizare a informatiilor despre un specific actor </a></li>
+                        <li><a href="statistics-page">3.1.16 Pagina de vizualizare a statisticilor </a></li>
+                        <li><a href="search-page">3.1.16 Pagina de cautare </a></li>
+                        <li><a href="#about">3.1.18 Pagina informativa </a></li>
+                        <li><a href="#help">3.1.19 Pagina de ajutor </a></li>
                     </ul>
                 </li>
                 <li><a href="#hardware-interface">3.2 Interfața Hardware </a></li>
@@ -191,7 +193,7 @@
                 simplă și captivantă de a explora și înțelege conținutul disponibil pe platformele
                 de streaming Netflix și Disney, oferindu-le în același timp instrumente puternice
                 pentru analiza și înțelegerea datelor asociate acestui conținut. Prin integrarea
-                cu TMDb și oferirea de funcționalități avansate de căutare și filtrare, MoX le 
+                cu TMDB și oferirea de funcționalități avansate de căutare și filtrare, MoX le 
                 permite utilizatorilor să descopere rapid și să se angajeze cu conținutul care le 
                 interesează cel mai mult. De asemenea, utilizatorii își pot crea un cont
                 pentru a beneficia de restul funcționalităților MoX.
@@ -211,7 +213,7 @@
             <h4>2.1 Perspectiva produsului</h4>
             <p>MoX (Movies and TV Shows Explorer), este o platformă web care integrează datele de la 
                serviciile de streaming Netflix și Disney, corelate cu informații suplimentare disponibile
-               in The Movie Database (TMDb). Scopul său este de a oferi utilizatorilor o experiență 
+               in The Movie Database (TMDB). Scopul său este de a oferi utilizatorilor o experiență 
                interactivă și informativă privind conținutul disponibil pe aceste platforme, îmbogățită 
                cu statistici și vizualizări relevante.
         </section>
@@ -222,14 +224,31 @@
                 <li>să se înregistreze pe site.</li>
                 <li>să se autentifice pe site.</li>
                 <li>să își reseteze parola in cazul in care a uitat-o.</li>
+                <li>să își editeze informatiile.</li>
+                <li>să își stearga contul.</li>
+                <li>să se deconecteze daca este logat.</li>
                 <li>să consulte pagină "Home(MTSE)" și noutățile disponibile</li>
                 <li>să acceseze paginile "Movies" si "TvShows" pentru a accesa o lista de filme sau seriale, 
-                     ce pot fi filtrate ulterior
+                     ce pot fi filtrate ulterior, sau se poate folosi functionalitatea de cautare
+                </li>
+                <li>să acceseze pagina "Search" pentru a facilita de functionalitatea de cautare si filtrare
+                    a filmelor si serialelor de pe platforma
+                </li>
+                <li>să acceseze pagina de "Descriere a unui film sau serial" pentru a avea acces la la informatii 
+                    relevante despre filmul/serialul selectat 
+                </li>
+                <li>să acceseze pagina de "Informatii a unui actor" pentru a avea acces la la informatii 
+                    relevante despre actorul selectat 
+                </li>
+                <li>să acceseze pagina "Statistici" pentru a avea acces la o gama de statistici sub forma unor diagrame 
+                    ce pot fi filtrare dupa mai multe criterii si, de asemenea, exportate
+                </li>
+                <li>să acceseze pagina "Watchlist" pentru a vizualiza filmele sau serialele adaugate in watchlist
                 </li>
                 <li>să acceseze pagina "About Us" pentru a accesa scurtă descriere a paginii web</li>
                 <li>să acceseze pagina "Help" pentru a beneficia de sfaturi în vederea utilizării aplicației</li>
-                <li>dacă este <b>autentificat</b>, să își acceseze profilul și sa verifice statisticile personale</li>
                 <li>dacă utilizatorul are rol de <b>admin</b>, acesta poate șterge utilizatori din baza de date</li>
+                <li>dacă utilizatorul are rol de <b>admin</b>, acesta poate șterge crea noi admini</li>
                 <li>dacă utilizatorul are rol de <b>admin</b>, acesta poate adăuga filme/seriale noi</li>
                 <li>dacă utilizatorul are rol de <b>admin</b>, acesta poate modifica informatii despre date deja
                     existente.
@@ -245,8 +264,7 @@
                     <ul>
                         <li>pasioanti care doresc sa tina o evidenta a filmelor/serialelor vizionate. Ei au 
                             acces la funcționalități suplimentare și pot beneficia de caracteristici 
-                            personalizate, cum ar fi salvarea preferințelor, crearea de liste de vizionare 
-                            sau participarea la comunitatea platformei prin postarea de recenzii și ratinguri.
+                            personalizate, cum ar fi salvarea preferințelor.
                         </li>
                     </ul>
                 </li>
@@ -262,18 +280,18 @@
             </ul>
             <h5>2.3.2 Caracteristici</h5>
             <ul>
-                <li>Utilizatorii care sunt <b> autentificați </b> pot accesa pagina "My Profile", "Movies", "TvShows",
-                    dar și cele două pagini ce oferă detalii și sfaturi cu privire la aplicație, "About Us" și "Help".
-                    Mai mult, aceștia pot lăsa recenzii și ratinguri pentru filmele și serialele pe care le-au vizionat. 
-                    Aceste recenzii și ratinguri pot fi vizualizate de alți utilizatori și pot ajuta la recomandări 
-                    personalizate. De asemenea, pot să monitorizeze statistici, acestea fiind salvate la profilul
-                    fiecărui utilizator.
+                <li>Utilizatorii care sunt <b> autentificați </b> pot accesa pagina "Movies", "TvShows", 
+                    "Search Page", "Statistics", "Watchlist", "Description movie/tv show page", "Actor Page",
+                    "Edit account", "Delete account", "Sign out", dar și cele două pagini ce oferă detalii și 
+                    sfaturi cu privire la aplicație, "About Us" și "Help". De asemenea, daca utilizatorul 
+                    are rol de <b>admin</b> atunci are poate accesa "Add Movie/TV Show" si "Manage users".
                 </li>
                 <li>Utilizatorii neautentificați pot naviga și explora conținutul paginii de filme și seriale fără a fi 
                     nevoie să se autentifice. Aceștia pot vedea lista de filme și seriale disponibile pe platformă, pot 
                     căuta filme și seriale în funcție de anumite criterii de bază, cum ar fi genul sau anul de lansare.
                     De asemenea, pot accesa paginile individuale ale fiecărui film sau serial pentru a vedea mai multe 
-                    detalii și pentru a vizualiza trailerul, imagini. Așadar, aceștia pot să se înregistreze ca și 
+                    detalii și pentru a vizualiza trailerul, imagini, pot accesa statistici referitoare 
+                    la datele de pe platforme. Așadar, aceștia pot să se înregistreze ca și 
                     utilizator și să beneficieze de toate funcționalitățile.
                 </li>
             </ul>
@@ -303,8 +321,8 @@
                 <li id="nav-bar"><b>Bara de navigație</b></li>
                 <li style="list-style: none">
                     <ul>
-                        <li>Aceasta reprezintă meniul de navigare către fiecare pagina a aplicației, prezent pe fiecare
-                            pagină totodată.
+                        <li>Aceasta reprezintă meniul de navigare către o selectie de pagini a aplicației, prezent pe fiecare
+                            pagină totodată. Acesta este meniul pentru un utilizator nelogat:
                         </li>
                         <li class="pictures" style="list-style: none"><img alt="navbar" src="readMeImages/navbar.png" width=800
                         ></li>
