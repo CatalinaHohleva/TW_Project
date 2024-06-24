@@ -15,9 +15,17 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const passwordRegex = /^.{4,50}$/;
+        /*const passwordRegex = /^.{4,50}$/;
         if (!passwordRegex.test(newPassword)) {
             displayError('Password must be 4-50 characters long');
+            return;
+        }*/
+
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,50}$/;
+        
+        if (!passwordRegex.test(password)) {
+            errorBox.textContent = 'Password must be 8-50 characters long, include at least one uppercase letter, one lowercase letter, one number, and one special character.';
+            errorBox.style.display = 'block';
             return;
         }
 

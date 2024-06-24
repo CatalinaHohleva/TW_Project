@@ -16,6 +16,7 @@ function fetchUsers() {
                     <td>${user.username}</td>
                     <td>${user.email}</td>
                     <td>
+                        <button class="admin-btn" onclick="makeAdmin('${user.email}')">Make admin</button>
                         <button class="delete-btn" onclick="deleteUser('${user.email}')">Delete</button>
                     </td>
                 `;
@@ -35,7 +36,7 @@ function deleteUser(email) {
         .then(response => response.json())
         .then(result => {
             if (result.success) {
-                fetchUsers(); // Fetch and render updated users list
+                fetchUsers();
             } else {
                 alert('Failed to delete user');
             }
@@ -43,6 +44,27 @@ function deleteUser(email) {
         .catch(error => {
             console.error('Error deleting user:', error);
             alert('Failed to delete user');
+        });
+    }
+}
+
+function makeAdmin(email) {
+    if (confirm('Are you sure you want to make this user an admin?')) {
+        fetch(`/users/makeAdmin/${encodeURIComponent(email)}`, {
+            method: 'POST'
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.success) {
+                alert('User has been made an admin');
+                fetchUsers();
+            } else {
+                alert('Failed to make user an admin');
+            }
+        })
+        .catch(error => {
+            console.error('Error making user an admin:', error);
+            alert('Failed to make user an admin');
         });
     }
 }
