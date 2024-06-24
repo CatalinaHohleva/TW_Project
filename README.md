@@ -390,7 +390,9 @@
                             va fi redirecționat
                             către pagină de autentificare.
                         </li>
-                        <li class="pictures" style="list-style: none"><img alt="forgotPassword" src="readMeImages/forgotPassword.png" width=800></li>
+                        <li class="pictures" style="list-style: none"><img alt="forgotPassword1" src="readMeImages/forgotPassword1.png" width=800></li>
+                        <li class="pictures" style="list-style: none"><img alt="forgotPassword2" src="readMeImages/forgotPassword2.png" width=800></li>
+                        <li class="pictures" style="list-style: none"><img alt="forgotPassword3" src="readMeImages/forgotPassword3.png" width=800></li>
                     </ul>
                 </li>
                 <li id="editAccount-page"><b>Pagina de editare a informatiilor contului</b></li>
