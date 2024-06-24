@@ -16,7 +16,7 @@ const pool = new Pool({
     user: 'postgres',
     host: 'localhost',
     database: 'myapp',
-    password: 'password',
+    password: 'qwerty',
     port: 5432,
 });
 
@@ -70,6 +70,7 @@ const staticFiles = {
     '/change_email.html': { path: 'change_email.html', contentType: 'text/html' },
     '/change_password.html': { path: 'change_password.html', contentType: 'text/html' },
     '/ContactUs.html': { path: 'ContactUs.html', contentType: 'text/html' },
+    '/ContactUs.js': { path: 'ContactUs.js', contentType: 'application/javascript'},
     '/delete_account.html': { path: 'delete_account.html', contentType: 'text/html' },
     '/delete-movie.html': { path: 'delete-movie.html', contentType: 'text/html' },
     '/descriptionPage.html': { path: 'descriptionPage.html', contentType: 'text/html' },
@@ -120,6 +121,8 @@ const staticFiles = {
     '/script-home.js': { path: 'script-home.js', contentType: 'application/javascript'},
     '/search-script.js': { path: 'search-script.js', contentType: 'application/javascript'},
     '/sign_in.js': { path: 'sign_in.js', contentType: 'application/javascript'},
+    '/sign_out.html': { path: 'sign_out.html', contentType: 'text/html' },
+    '/sign_out.css': { path: 'sign_out.css', contentType: 'text/css' },
     '/sign_out.js': { path: 'sign_out.js', contentType: 'application/javascript'},
     '/small-search-script.js': { path: 'small-search-script.js', contentType: 'application/javascript'},
     '/statistics-script.js': { path: 'statistics-script.js', contentType: 'application/javascript'},
@@ -128,7 +131,10 @@ const staticFiles = {
     '/user_profile.js': { path: 'user_profile.js', contentType: 'application/javascript'},
     '/verify_email.js': { path: 'verify_email.js', contentType: 'application/javascript'},
     '/verify_email_password_reset.js': { path: 'verify_email_password_reset.js', contentType: 'application/javascript'},
-    '/verify_new_email.js': { path: 'verify_new_email.js', contentType: 'application/javascript'}
+    '/verify_new_email.js': { path: 'verify_new_email.js', contentType: 'application/javascript'},
+    '/menu_bars.css': { path: 'menu_bars.css', contentType: 'text/css' },
+    '/hamburger_menu.js': { path: 'hamburger_menu.js', contentType: 'application/javascript'},
+    '/responsive_header.js': { path: 'responsive_header.js', contentType: 'application/javascript'}
 };
 
 const getFile = (filePath, contentType, res) => {
@@ -2021,7 +2027,33 @@ const server = http.createServer(async (req, res) => {
                 res.setHeader('Content-Type', 'application/json');
                 res.end(JSON.stringify(result.rows));
             });
-        } else if (req.method === 'DELETE' && req.url.startsWith('/users/')) {
+        } 
+        else if (req.method === 'POST' && req.url.startsWith('/users/')) {
+            const userEmail = decodeURIComponent(req.url.substring('/users/makeAdmin/'.length)); 
+            const query = 'UPDATE users SET role = \'admin\' WHERE email = $1';
+
+            pool.query(query, [userEmail], (err, result) => {
+                if (err) {
+                    console.error('Error making user an admin:', err);
+                    res.statusCode = 500;
+                    res.setHeader('Content-Type', 'application/json');
+                    res.end(JSON.stringify({ success: false, message: 'Error making user an admin' }));
+                    return;
+                }
+        
+                if (result.rowCount === 0) {
+                    res.statusCode = 404;
+                    res.setHeader('Content-Type', 'application/json');
+                    res.end(JSON.stringify({ success: false, message: 'User not found' }));
+                    return;
+                }
+        
+                res.statusCode = 200;
+                res.setHeader('Content-Type', 'application/json');
+                res.end(JSON.stringify({ success: true, message: 'User made an admin successfully' }));
+            });
+        }
+        else if (req.method === 'DELETE' && req.url.startsWith('/users/')) {
             const userEmail = decodeURIComponent(req.url.substring('/users/'.length)); 
             const query = 'DELETE FROM users WHERE email = $1';
         
@@ -2464,7 +2496,38 @@ const server = http.createServer(async (req, res) => {
                   res.end(JSON.stringify({ success: false, error: 'Invalid JSON' }));
               }
           });
-        } else {
+        } 
+        else if (req.method === 'POST' && req.url === '/contact_us') {
+            let body = '';
+            req.on('data', chunk => {
+                body += chunk.toString();
+            });
+            req.on('end', () => {
+                try {
+                    const { name, email, feedback_text } = JSON.parse(body);
+                    
+                    pool.query('INSERT INTO feedback (name, email, feedback_text) VALUES ($1, $2, $3)', 
+                        [name, email, feedback_text], (err) => {
+                            if (err) {
+                                console.error('Error inserting your feedback in the database:', err);
+                                res.statusCode = 500;
+                                res.setHeader('Content-Type', 'application/json');
+                                res.end(JSON.stringify({ success: false, message: 'Error inserting your feedback in the database' }));
+                                return;
+                            }
+                            res.statusCode = 200;
+                            res.setHeader('Content-Type', 'application/json');
+                            res.end(JSON.stringify({ success: true, message: 'Feedback insert successful' }));
+                        });
+                } catch (err) {
+                    console.error('Error parsing JSON:', err);
+                    res.statusCode = 400;
+                    res.setHeader('Content-Type', 'application/json');
+                    res.end(JSON.stringify({ success: false, error: 'Invalid JSON' }));
+                }
+            });
+        } 
+        else {
             res.statusCode = 404;
             res.setHeader('Content-Type', 'text/plain');
             res.end('Page not found');
