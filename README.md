@@ -333,7 +333,7 @@
                         <li class="pictures" style="list-style: none"><img alt="navbar2" src="readMeImages/navbar2.png" width=800
                         ></li>
                         <li>Acesta este meniul atunci cand latimea paginii web se micsoreaza(< 800px):</li>
-                        <li class="pictures" style="list-style: none"><img alt="navbar3" src="readMeImages/navbar3.png" width=800
+                        <li class="pictures" style="list-style: none"><img alt="navbar3" src="readMeImages/navbar3.png" width=400
                         ></li>
                     </ul>
                 </li>
