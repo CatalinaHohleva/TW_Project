@@ -46,18 +46,20 @@
                         <li><a href="#editAccount-page">3.1.5 Pagina de editare a contului </a></li>
                         <li><a href="#deleteAccount-page">3.1.6 Pagina de stergere a contului </a></li>
                         <li><a href="#signout-page">3.1.7 Pagina de deconectare</a></li>
-                        <li><a href="#mangeUsers-page">3.1.8 Pagina de administrare a utilizatorilor</a></li>
+                        <li><a href="#manageUsers-page">3.1.8 Pagina de administrare a utilizatorilor</a></li>
                         <li><a href="#addMovie-page">3.1.9 Pagina de adaugare a unui film sau serial</a></li>
                         <li><a href="#watchlist-page">3.1.10 Pagina de vizualizare a watchlist-ului</a></li>
                         <li><a href="#home-page">3.1.11 Pagina acasă</a></li>
                         <li><a href="#movies">3.1.12 Pagina de explorare a filmelor </a></li>
                         <li><a href="#tvShows">3.1.13 Pagina de explorare a serialelor </a></li>
-                        <li><a href="movieTvShow-page">3.1.14 Pagina de vizualizare a informatiilor despre un specific film sau serial </a></li>
-                        <li><a href="actor-page">3.1.15 Pagina de vizualizare a informatiilor despre un specific actor </a></li>
-                        <li><a href="statistics-page">3.1.16 Pagina de vizualizare a statisticilor </a></li>
-                        <li><a href="search-page">3.1.16 Pagina de cautare </a></li>
-                        <li><a href="#about">3.1.18 Pagina informativa </a></li>
-                        <li><a href="#help">3.1.19 Pagina de ajutor </a></li>
+                        <li><a href="#movieTvShow-page">3.1.14 Pagina de vizualizare a informatiilor despre un specific film sau serial </a></li>
+                        <li><a href="#actor-page">3.1.15 Pagina de vizualizare a informatiilor despre un specific actor </a></li>
+                        <li><a href="#statistics-page">3.1.16 Pagina de vizualizare a statisticilor </a></li>
+                        <li><a href="#search-page">3.1.16 Pagina de cautare </a></li>
+                        <li><a href="#editMovie-page">3.1.17 Pagina de editare a informatiilor unui film sau serial </a></li>
+                        <li><a href="#deleteMovie-page">3.1.18 Pagina de stergere a unui film sau serial </a></li>
+                        <li><a href="#about">3.1.19 Pagina informativa </a></li>
+                        <li><a href="#help">3.1.20 Pagina de ajutor </a></li>
                     </ul>
                 </li>
                 <li><a href="#hardware-interface">3.2 Interfața Hardware </a></li>
@@ -322,9 +324,16 @@
                 <li style="list-style: none">
                     <ul>
                         <li>Aceasta reprezintă meniul de navigare către o selectie de pagini a aplicației, prezent pe fiecare
-                            pagină totodată. Acesta este meniul pentru un utilizator nelogat:
+                            pagină totodată. De asemenea ofera posibilitatea de cautare cu redirectionare catre pagina de cautare.
+                            Acesta este meniul pentru un utilizator nelogat:
                         </li>
-                        <li class="pictures" style="list-style: none"><img alt="navbar" src="readMeImages/navbar.png" width=800
+                        <li class="pictures" style="list-style: none"><img alt="navbar1" src="readMeImages/navbar1.png" width=800
+                        ></li>
+                        <li>Acesta este meniul pentru un utilizator logat:</li>
+                        <li class="pictures" style="list-style: none"><img alt="navbar2" src="readMeImages/navbar2.png" width=800
+                        ></li>
+                        <li>Acesta este meniul atunci cand latimea paginii web se micsoreaza(< 800px):</li>
+                        <li class="pictures" style="list-style: none"><img alt="navbar3" src="readMeImages/navbar3.png" width=800
                         ></li>
                     </ul>
                 </li>
@@ -346,8 +355,7 @@
                         <li> De asemenea, utilizatorul are posibilitatea de a-si salva contul pentru o autentificare
                             ulterioarea selectand optiunea de 
                             <b> Remember me </b></li>
-                        <li class="pictures" style="list-style: none"><img alt="login" height="400"
-                                                                           src="readMeImages/signin.png" width=800>
+                        <li class="pictures" style="list-style: none"><img alt="login" src="readMeImages/signin.png" width=800>
                         </li>
                     </ul>
                 </li>
@@ -356,52 +364,104 @@
                     <ul>
                         <li>Pagina oferă funcționalitatea de înregistrare a utilizatorilor, pentru a putea beneficia de
                             toate
-                            funcționalitățile RoT.
+                            funcționalitățile MoX.
                         </li>
                         <li>Pentru a se înregistra, utilizatorul trebuie să completeze câmpurile <b>Email</b>,
-                            <b>Username</b>, <b>Password</b> si <b>Re-Enter Password</b>. Mai mult, câmpurile <b>Email</b> și
-                            <b>Username</b>
-                            trebuie să fie <b>unice</b>.
+                            <b>Username</b>, <b>Password</b> si <b>Re-Enter Password</b>. Mai mult, câmpul <b>Email</b> 
+                            trebuie să fie <b>unic</b>. De asemenea, campurile trebuie sa contina date <b>valide</b> 
+                            conform unui pattern.
                         </li>
                         <li>În cazul în care utilizatorul își amintește că are un cont existent, acesta poate apasă
                             butonul
-                            <b>Sign in</b> aflat în partea de jos a formularului, sau pe butonul <b>Login</b> din
-                            coltul din dreapta-sus
-                            al paginii, pentru a reveni la meniul de autentificare.
+                            <b>Sign in</b> aflat în partea de jos a formularului.
                         </li>
-                        <li class="pictures" style="list-style: none"><img alt="signup" height="400"
-                                                                           src="readMeImages/signup.png" width=800>
+                        <li class="pictures" style="list-style: none"><img alt="signup" src="readMeImages/signup.png" width=800>
                     </ul>
                 </li>
-                <li id="resetPassword-page"><b>Pagina de de resetare a parolei prin mail</b></li>
+                <li id="resetPassword-page"><b>Pagina de resetare a parolei prin mail</b></li>
                 <li style="list-style: none">
                     <ul>
                         <li> Pagina are rolul de a trimite un email către utilizator, care îl va redirecționa spre o
-                            pagină nouă, unde care
-                            își va introduce nouă parolă. La apăsarea butonului de <b> Continue </b>, utilizatorul
+                            pagină nouă, unde isi va reintroduce adresa de email(pe care va primi un cod/OTP - One Time Password
+                            cu o durata limitate de viata - 5 min) 
+                            si dupa va fi redirectionat catre o pagina de verificare a acestui cod, in cazul in care OTP-ul este 
+                            corect va fi, in sfarsit, va fi trimis catre pagina de resetare a parolei unde va introduce nouă parolă. 
+                            La apăsarea butonului de <b> Continue </b>, utilizatorul
                             va fi redirecționat
                             către pagină de autentificare.
                         </li>
-                        <li class="pictures" style="list-style: none"><img alt="forgotPassword" height="400"
-                                                                           src="readMeImages/forgotPassword.png" width=800></li>
+                        <li class="pictures" style="list-style: none"><img alt="forgotPassword" src="readMeImages/forgotPassword.png" width=800></li>
+                    </ul>
+                </li>
+                <li id="editAccount-page"><b>Pagina de editare a informatiilor contului</b></li>
+                <li style="list-style: none">
+                    <ul>
+                        <li> Pagina are rolul de a oferi utilizatorului posibilitatea editarii datele aferente contului sau. Mai exact acesta are 
+                            optiunea de a ediata username-ul, email-ul si parola. Schimbarea email-ului si a parolei redirectioneaza utilizatorul 
+                            care pagini specifice.
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="editAccount1" src="readMeImages/editAccount1.png" width=800></li>
+                        <li class="pictures" style="list-style: none"><img alt="editAccount2" src="readMeImages/editAccount2.png" width=800></li>
+                        <li class="pictures" style="list-style: none"><img alt="editAccount3" src="readMeImages/editAccount3.png" width=800></li>
+                    </ul>
+                </li>
+                <li id="deleteAccount-page"><b>Pagina de stergere a contului</b></li>
+                <li style="list-style: none">
+                    <ul>
+                        <li> Pagina are rolul de a oferi utilizatorului facilitatea de stergere a contul pe care este logat. 
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="deleteAccount" src="readMeImages/deleteAccount.png" width=800></li>
+                    </ul>
+                </li>
+                <li id="signout-page"><b>Pagina de deconectare</b></li>
+                <li style="list-style: none">
+                    <ul>
+                        <li> Pagina are rolul de a oferi utilizatorului conectat optiunea de deconectare.
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="signout" src="readMeImages/signout.png" width=800></li>
+                    </ul>
+                </li>
+                <li id="manageUsers-page"><b>Pagina de administrare a utilizatorilor</b></li>
+                <li style="list-style: none">
+                    <ul>
+                        <li> Pagina are rolul de a oferi utilizatorului cu rol de <b>admin</b> posibilitatea administrarii utilizatorilor 
+                             platformei cu optiunea de crea noi admini sau de a sterge utilizatori.
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="manageUsers1" src="readMeImages/manageUsers1.png" width=800></li>
+                        <li class="pictures" style="list-style: none"><img alt="manageUsers2" src="readMeImages/manageUsers2.png" width=800></li>
+                    </ul>
+                </li>
+                <li id="addMovie-page"><b>Pagina de adaugare a unui film sau serial</b></li>
+                <li style="list-style: none">
+                    <ul>
+                        <li> Pagina are rolul de a oferi utilizatorului cu rol de <b>admin</b> posibilitatea adaugarii manuale de noi date in 
+                            baza de date, fiind neceasare cel putin un titlul, tipul si platforma de vizionare. De asemenea, faciliteaza 
+                            de posibilitatea de a incarca date dintru fisier CSV.
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="addMovie1" src="readMeImages/addMovie1.png" width=800></li>
+                        <li class="pictures" style="list-style: none"><img alt="addMovie2" src="readMeImages/addMovie2.png" width=800></li>
+                    </ul>
+                </li>
+                <li id="watchlist-page"><b>Pagina de vizualizare a watchlist-ului</b></li>
+                <li style="list-style: none">
+                    <ul>
+                        <li> Pagina ofera utilizatorului facilitatea de a gestiona si a vizualiza o lista de titluri adaugate anterior 
+                            in watchlist cu posibilitea de filtrare dupa multiple criterii.
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="watchlist" src="readMeImages/watchlist.png" width=800></li>
                     </ul>
                 </li>
                 <li id="home-page"><b> Pagina acasă</b></li>
                 <li style="list-style: none">
                     <ul>
-                        <li>Pagina are rolul de prezența ultimele tendinte, ultimele trailere lansate, filme si seriale populare.</li>
+                        <li>Pagina are rolul de prezenta ultimele aparitii pe platformele Netflix si Disney+ si de a oferii posibilitatea de cautare 
+                            cu redirectionare catre pagina de cautare.</li>
                         <li class="pictures" style="list-style: none"><img alt="home1" src="readMeImages/home1.png"
                                                                            width=800>
                         </li>
                         <li class="pictures" style="list-style: none"><img alt="home2" src="readMeImages/home2.png"
                                                                            width=800>
                         </li>
-                        <li class="pictures" style="list-style: none"><img alt="home3" src="readMeImages/home3.png"
-                                                                           width=800>
-                        </li>
-                        <li class="pictures" style="list-style: none"><img alt="home4" src="readMeImages/home4.png"
-                                                                           width=800>
-                        </li> 
                     </ul>
                 </li>
                 <li id="movies"><b> Pagina de explorare a filmelor </b></li>
@@ -411,54 +471,43 @@
                            de film este însoțit de detalii relevante, cum ar fi imaginea de copertă, titlul, data 
                            de lansare. Utilizatorii au posibilitatea să efectueze căutări rapide sau să aplice 
                            filtre avansate pentru a rafina rezultatele în funcție de preferințe specifice, 
-                           cum ar fi genul, platforma de vizionare, anul de lansare, etc. Ei pot accesa paginile 
-                           individuale ale fiecărui film pentru a vedea mai multe detalii, inclusiv trailerul, 
-                           recenzii și ratinguri de la alți utilizatori. Utilizatorii pot lăsa recenzii și ratinguri 
-                           pentru filmele vizionate.
+                           cum ar fi genul, platforma de vizionare, anul de lansare, perioada in care a fost lansat si 
+                           modalitatea de sortare. Ei pot accesa paginile individuale ale fiecărui film pentru a vedea 
+                           mai multe detalii, inclusiv trailerul, recomandari, actorii principali.
                         </li>
-                        <li class="pictures" style="list-style: none"><img alt="movie1"
-                                                                           src="readMeImages/movie1.png" width=800>
-                        </li>
-                        <li class="pictures" style="list-style: none"><img alt="movie2"
-                                                                           src="readMeImages/movie2.png" width=800>
-                        </li>
-                        <li class="pictures" style="list-style: none"><img alt="movie3"
-                                                                           src="readMeImages/movie3.png" width=800>
+                        <li class="pictures" style="list-style: none"><img alt="movie" src="readMeImages/movie.png" width=800>
                         </li>
                     </ul>
                 </li>
                 <li id="tvShows"><b> Pagina de explorare a serialelor </b></li>
                 <li style="list-style: none">
                     <ul>
-                        <li>Pagina oferă o prezentare detaliată a serialelor disponibile pe platforma MoX, organizate 
-                           într-un mod care facilitează navigarea și explorarea. Utilizatorii au posibilitatea să 
-                           efectueze căutări rapide sau să aplice filtre avansate pentru a rafina rezultatele 
-                           în funcție de preferințe specifice, 
-                           cum ar fi genul, platforma de vizionare, anul de lansare, etc. Ei pot accesa paginile 
-                           individuale ale fiecărui serial pentru a vedea mai multe detalii, inclusiv trailerul, 
-                           recenzii și ratinguri de la alți utilizatori. Utilizatorii pot lăsa recenzii și ratinguri 
-                           pentru serialele vizionate.
+                        <li>Pagina prezintă o listă extinsă de serialelor disponibile pe platforma MoX. Fiecare titlu
+                           de serial este însoțit de detalii relevante, cum ar fi imaginea de copertă, titlul, data 
+                           de lansare. Utilizatorii au posibilitatea să efectueze căutări rapide sau să aplice 
+                           filtre avansate pentru a rafina rezultatele în funcție de preferințe specifice, 
+                           cum ar fi genul, platforma de vizionare, anul de lansare, perioada in care a fost lansat si 
+                           modalitatea de sortare. Ei pot accesa paginile individuale ale fiecărui serial pentru a vedea 
+                           mai multe detalii, inclusiv trailerul, recomandari, actorii principali.
                         </li>
-                        <li class="pictures" style="list-style: none"><img alt="tvShows1" src="readMeImages/tvShows1.png"
-                                                                           width=800>
-                        </li>
-                        <li class="pictures" style="list-style: none"><img alt="tvShows2" src="readMeImages/tvShows2.png"
-                                                                           width=800>
-                        </li>
-                        <li class="pictures" style="list-style: none"><img alt="tvShows3" src="readMeImages/tvShows3.png"
+                        <li class="pictures" style="list-style: none"><img alt="tvShows" src="readMeImages/tvShows.png"
                                                                            width=800>
                         </li>
                     </ul>
-                <li id="movieTvShow-page"><b> Pagina de vizualizare a informatiilor despre un anume film/serial</b></li>
+                <li id="movieTvShow-page"><b> Pagina de vizualizare a informatiilor despre un specific film sau serial</b></li>
                 <li style="list-style: none">
                     <ul>
                         <li>Pagina începe cu o imagine de copertă si una a posterului filmului sau serialului, 
                             oferind utilizatorilor o primă impresie vizuală a conținutului. Continua
                             cu o serie de informatii printre care se numara: titlul, durata, genurile,
-                            un scurt sinopsis, directorul, rating, etc. Trailerul, dacă este disponibil, 
-                            va fi afișat pentru a oferi utilizatorilor o previzualizare a conținutului.
+                            un scurt sinopsis, directorul, rating, etc. Trailerul si imagini aferente, dacă sunt disponibile, 
+                            vor fi afișate pentru a oferi utilizatorilor o previzualizare a conținutului.
                             Se listează actorii și actrițele principale 
-                            care apar în filmul sau serialul respectiv, împreună cu numele personajelor lor.
+                            care apar în film sau serial, cu posibilitatea vizualizarii paginii 
+                            individuale a actorului. De asemenea, se va oferi o lista de recomandari pe baza genului filmului 
+                            sau serialului curent. Un utitlizator logat are posibilitatea de a adauga titlul curent 
+                            intr-un watchlist, iar un admin beneficiaza si de inca doua facilitati, mai exact, de a 
+                            edita informatiile titlului curect si de a-l sterge din baza de date.
                         </li>
                         <li class="pictures" style="list-style: none"><img alt="desc1"
                                                                            src="readMeImages/desc1.png" width=800>
@@ -468,6 +517,18 @@
                         </li>
                         <li class="pictures" style="list-style: none"><img alt="desc3"
                                                                            src="readMeImages/desc3.png" width=600>
+                        </li>
+                    </ul>
+                </li>
+                <li id="actor-page"><b> Pagina de vizualizare a informatiilor despre un specific actor</b></li>
+                <li style="list-style: none">
+                    <ul>
+                        <li>Pagina începe cu o imagine de copertă si una de profil al actorului si este urmata de o scurta 
+                            sectiune de informatii. De asemenea, este listata si o lista de titluri pentru care 
+                            acesta este cunoscut.
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="actor"
+                                                                           src="readMeImages/actor.png" width=800>
                         </li>
                     </ul>
                 </li>
@@ -482,68 +543,15 @@
                         <li class="pictures" style="list-style: none"><img alt="aboutUs2" src="readMeImages/aboutUs2.png" width=800>
                         </li>
                     </ul>
+                </li>
                 <li id="help"><b>Pagina de ajutor</b></li>
                 <li style="list-style: none">
                     <ul>
-                        <li>Pagina are rolul de a oferi utilizatorului posibilitatea de a pune intrebari, ulterior oferindu-i-se 
-                           sfaturi pentru a putea beneficia de o experienta completa pe site.
+                        <li>Pagina are rolul de a oferi utilizatorului posibilitatea de a pune intrebari sau a oferi feedback, ulterior 
+                            oferindu-i-se sfaturi pentru a putea beneficia de o experienta completa pe site.
                         </li>
                         <li class="pictures" style="list-style: none"><img alt="help" src="readMeImages/help.png"
                                                                            width=800>
-                        </li>
-                    </ul>
-                <li id="profile"><b>Pagina de profil</b></li>
-                <li style="list-style: none">
-                    <ul>
-                        <li>Urmeaza a fi implementata.</li>
-                        <li>Pagina va prezinta informații despre utilizator.</li>
-                        <li>Utilizatorii vor vedea informații despre propriul cont, cum ar fi numele de utilizator,
-                          adresă de email și alte detalii de profil pe care le-au furnizat la înregistrare. 
-                          Utilizatorii pot vedea recenziile și ratingurile pe care le-au lăsat pentru filmele și 
-                          serialele pe care le-au vizionat. Acestea pot fi vizualizate atât de utilizatorul însuși, 
-                          cât și de alți utilizatori care accesează profilul său.
-                        </li>
-                        <li>Mai mult, utilizatorul va avea la dispoziție un buton <b>Logout</b> prin care poate ieși din
-                            cont,
-                            dar is unul <b>Change Password</b>, în cazul în care își dorește acest lucru.
-                        </li>
-                    </ul>
-                </li>
-                <li id="error400"><b>Pagina 400</b></li>
-                <li style="list-style: none">
-                    <ul>
-                        <li>Urmeaza a fi implementata.</li>
-                        <li>Pagina va afișeaza eroarea <b>400 Cerere greșită</b>.</li>
-                    </ul>
-                </li>
-                <li id="error404"><b>Pagina 404</b></li>
-                <li style="list-style: none">
-                    <ul>
-                        <li>Urmeaza a fi implementata.</li>
-                        <li>Pagina va afișeaza eroarea <b>404 Cerere greșită</b>.</li>
-                    </ul>
-                </li>
-                <li id="admin"><b>Pagina Administratorului</b></li>
-                <li style="list-style: none">
-                    <ul>
-                        <li>Urmeaza a fi implementata.</li>
-                        <li>Pagina va afișeaza interfață pentru <b>adminstrator</b>.</li>
-                        <li>Administratorul are capacitatea de a adauga noi filme/seriale, de a modifica
-                            informatii despre date deja existente și de a șterge utilizatori din baza de date.
-                        </li>
-                    </ul>
-                </li>
-                <li id="changepass"><b>Pagina de schimbare a parolei</b></li>
-                <li style="list-style: none">
-                    <ul>
-                        <li>Urmeaza a fi implementata.</li>
-                        <li>Pagină afișează un formular numit <b>Reset Password</b>, unde se vor completa corespunzător
-                            câmpurile
-                            pentru a schimbă parolă veche cu cea nouă.
-                        </li>
-                        <li>Se va primi un mesaj ce confirmă această schimbare, putând reveni la profil prin acționarea
-                            butonului
-                            <b>Continue</b>.
                         </li>
                     </ul>
                 </li>
@@ -561,13 +569,13 @@
                 <p>
                     Cerințele minime de software includ un browser funcțional, compatibil cu HTML5 și cu JavaScript.
                 <h5>Postgres Database</h5>
-                Aceasta va reprezinta baza de date în care stocăm informații despre fiecare utilizator, film si
+                Aceasta reprezinta baza de date în care stocăm informații despre fiecare utilizator, film si
                 serial.
             </section>
             <section id="communication-interface">
                 <h4>3.4 Interfața de comunicare</h4>
                 <p>
-                    Aplicația necesită o conexiune la internet. Standardul de comunicare care va fi utilizat este HTTP.
+                    Aplicația necesită o conexiune la internet. Standardul de comunicare care utilizat este HTTP.
                 </p>
             </section>
             <section id="system-features">
@@ -577,7 +585,7 @@
                     <h5 id="management-1">4.1.1 Descriere și generalități</h5>
                     Un utilizator se poate înregistra alegându-și un nume de utilizator, un email si o parola.
                     Acesta se poate
-                    autentifica având nevoie doar de numele de email și de parolă.
+                    autentifica având nevoie doar de email și de parolă.
                     <h5 id="management-2">4.1.2 Actualizarea informațiilor</h5>
                     <ul>
                         <li>
@@ -602,12 +610,12 @@
                 <section id="utilizatori">
                     <h4>4.2 Secțiunea de utilizatori</h4>
                     <h5 id="utilizatori-1">4.2.1 Descriere și generalități</h5>
-                    Secțiunea <b>Utilizatori</b> este destinată
+                    Secțiunea <b>Manage Users</b> este destinată
                     <b>adminului</b>, și aceasta îi oferă posibilitatea
                     de a vizualiza o listă cu toți utilizatorii din
                     baza de date. De asemenea, acesta are posibilitatea
                     de a elimina utilizatori din baza de date, dacă
-                    dorește acest lucru.
+                    dorește acest lucru sau de a crea noi admini.
                     <h5 id="utilizatori-2">4.2.2 Actualizarea informațiilor</h5>
                     <ul>
                         <li>
@@ -627,16 +635,14 @@
                     </ul>
                 </section>
                 <section id="administrator">
-                    <h4>4.3 Secțiunea Admin</h4>
+                    <h4>4.3 Sectiunea de admin</h4>
                     <h5 id="administrator-1">4.3.1 Descriere și generalități</h5>
-                    Secțiunea <b>Admin</b> este destinată utilizatorilor ce au drepturi de <b>administrator</b> și
-                    această
-                    oferă facilități pe care un utilizator normal nu le are. În momentul în care adminul accesează
-                    panoul de control,
+                    <b>Adminul</b> beneficiaza de facilități pe care un utilizator normal nu le are. 
+                    În momentul în care adminul accesează panoul de control,
                     va putea adaugă noi filme/seriale, modifică informatii referitoare la datele deja existente direct 
                     de pe platforma. Totodată, acesta este
                     capabil să șteargă
-                    conturi ale utilizatorilor.
+                    conturi ale utilizatorilor si de a crea admini.
                     <h5 id="administrator-2">4.3.2 Actualizare informațiilor</h5>
                     <ul>
                         <li>
@@ -664,37 +670,18 @@
                     </ul>
                 </section>
                 <section id="logout">
-                    <h4>4.4 Secțiunea de Logout</h4>
+                    <h4>4.4 Secțiunea de SignOut</h4>
                     <h5 id="logout-1">4.4.1 Descriere și generalități</h5>
-                    Secțiunea de <b>Logout</b> are rolul de a deconecta utilizatorul de pe cont și îl redirecționează
+                    Secțiunea de <b>SignOut</b> are rolul de a deconecta utilizatorul de pe cont și îl redirecționează
                     către
                     pagina acasă.
                     <h5 id="logout-2">4.4.2 Actualizare informațiilor</h5>
                     <ul>
                         <li>
-                            Tokenul de autentificare este eliminat, prin intermediul JWT.
+                            Datele utilizatorului sunt sterse din local storage.
                         </li>
                     </ul>
                     <h5 id="logout-3">4.4.3 Condiții de funcționare</h5>
-                    <ul>
-                        <li>
-                            Utilizatorul trebuie să fie autentificat.
-                        </li>
-                    </ul>
-                </section>
-                <section id="other">
-                    <h4>4.5 Alte funcționalități</h4>
-                    <h5 id="other-1">4.6.1 Descriere și generalități</h5>
-                    In cadrul paginii "Leaderboard", poate fi vzut un clasament ce tine evidenta celor mai harnici utilizatori
-                    de pe site.
-                    <h5 id="other-2">4.5.2 Actualizarea informațiilor</h5>
-                    <ol>
-                        <li>
-                            Datele folosite sunt extrase pe baza unui camp actualizat permanent
-                            din baza de date.
-                        </li>
-                    </ol>
-                    <h5 id="other-3">4.5.3 Cerințe de funcționare</h5>
                     <ul>
                         <li>
                             Utilizatorul trebuie să fie autentificat.
@@ -713,14 +700,12 @@
                 <section id="security">
                     <h4>5.2 Securizarea datelor</h4>
                     <p>
-                        Autorizarea utilizatorilor se face pe baza standardului JWT. Utilizatorii au acces doar la
-                        informații legate
-                        de progresul in cadrul site-ului, celelalte informații fiind ascunse. Token-ul folosit pentru
-                        autorizare este
-                        stocat intr-un cookie de tip HTTP-only, lucru care previne atacurile de tip XSS. Mai mult, toate
-                        datele sunt introduse
-                        in baza de date prin intermediul unor <b>prepared statements</b>, care asigura prevenirea SQL
-                        Injection.
+                        Utilizarea local storage a fost un punct cheie in contruirae aplicatiei noastre, fiind benefic pentru 
+                        securitate deoarece stochează datele direct în browserul utilizatorului, eliminând necesitatea de a 
+                        trimite informații sensibile către server. Astfel, reduce riscul interceptării datelor în tranzit. 
+                        În plus, accesul la Local Storage este limitat la scripturile de pe același domeniu, prevenind 
+                        atacurile cross-site scripting (XSS). De asemenea, fiind controlat de utilizator, datele pot 
+                        fi gestionate și șterse manual, oferind un plus de transparență și control asupra informațiilor personale.
                     </p>
                 </section>
                 <section id="software-attributes">
