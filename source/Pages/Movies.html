@@ -16,49 +16,42 @@
         <div class="container-header">
             <div class="subcontainer-header">
                 <nav class="navbar">
-                    <h1 class="header-title"><a href="home.html">MTSE</a></h1>
+                    <h2 class="header-title"><a href="home.html">MTSE</a></h2>
                     <img class="logo-img" src="https://i.ibb.co/4jWkmXS/film-reel.png" alt="Icon">
-                    <ul class="nav-menu">
-                        <li>
-                            <a href="Movies.html">Movies</a>
-                        </li>
-                        <li>
-                            <a href="TvShows.html">TV Shows</a>
-                        </li>
-                        <!--<li>
-                            <a href="#">Actors</a>
-                        </li>-->
-                        <li>
-                            <a href="sign_in.html" class="login-btn">Sign in</a>
-                        </li>
-                        <!--<li>
-                            <a href="register.html" class="register-btn">Sign up</a>
-                        </li>
-                        <li>-->
-                            <!--<a href="user_profile.html" class="profile-btn">My Profile</a>-->
+
+                    <div class="hamburger" id="hamburger">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+
+                    <ul class="nav-menu" id="nav-menu">
+                        <li><a class="movies-btn" href="Movies.html">Movies</a></li>
+                        <li><a class="tvshows-btn" href="TvShows.html">TV Shows</a></li>
+                        <li><a class="watchlist-btn" href="watchlist.html">Watchlist</a></li>
+                        <li><a class="login-btn" href="sign_in.html">Sign in</a></li>
                         <li>
                             <div class="profile-menu">
                                 <a class="profile-btn">My Profile</a>
                                 <div class="dropdown-content">
-                                    <a href="admin_users_list.html" id="manage-users">Manage users</a> <!-- Initially hidden for non-admin users -->
+                                    <a href="admin_users_list.html" id="manage-users">Manage users</a>
+                                    <a href="add-movie.html" id="add-movie">Add Movie/Tv Show</a>
                                     <a href="edit_account.html">Edit account</a>
-                                    <a href="add-movie.html">Add Movie/ Tv Show</a>
-                                    <a href="watchlist.html">Watchlist</a>
                                     <a href="delete_account.html">Delete account</a>
-                                    <a href="home.html" id="sign-out">Sign out</a>
+                                    <a href="sign_out.html">Sign out</a>
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <form action="search" class="small-search" id="search-bar">
-                                <input type="search" placeholder="Search a movie, tv show, actor, or a type..." class="small-search_input">
-                                <div class="small-search_button" id="small-search-button">
-                                    <i class="ri-search-2-line small-search_icon"></i>
-                                    <i class="ri-close-line small-search_close"></i>
-                                </div>
-                            </form>
-                        </li>
                     </ul>
+                        
+                    <form action="search" class="small-search" id="small-search-bar">
+                        <input type="search" placeholder="Search a movie or a tv show..." class="small-search_input">
+                        <div class="small-search_button" id="small-search-button">
+                            <i class="ri-search-2-line small-search_icon"></i>
+                            <i class="ri-close-line small-search_close"></i>
+                        </div>
+                    </form>
+                        
                 </nav>
             </div>
         </div>
@@ -241,10 +234,9 @@
             </div>
         </div>
     </div>
-
-    <script src="filter-script.js"></script>
+    <script src="responsive_header.js"></script>
     <script src="user_profile.js"></script>
-    <script src="sign_out.js"></script>
     <script src="header_visibility.js"></script>
+    <script src="filter-script.js"></script>
 </body>
 </html>
