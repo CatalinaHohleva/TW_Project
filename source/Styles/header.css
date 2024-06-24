@@ -2,7 +2,7 @@
 .logo-img {
     height: 50px;
     margin-right: auto;
-    margin-left: -130px;
+    margin-left: -120px;
 }
 header {
     position: absolute;
@@ -27,15 +27,15 @@ header {
 li {
     list-style: none;
 }
-.nav-menu a{
+.nav-menu a {
     color: midnightblue;
     text-decoration: none;
     font-weight: bold;
     background-color: transparent;
-    list-style: none;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
     font-size: 18px;
+    margin: 0 5px; 
 }
 .navbar {
     display: flex;
@@ -46,9 +46,9 @@ li {
 }
 .nav-menu {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    gap: 40px;
+    gap: 5px; 
 }
 .container-header {
     width: 100%;
@@ -115,54 +115,12 @@ li {
     opacity: 0;
 }
 
-.login-btn {
-    display: inline-block;
-    margin: 0px auto;
-    padding: 10px 20px;
-    background-color: midnightblue;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.login-btn:hover {
-    background-color: #88aed5;
-}
-
-.register-btn {
-    display: inline-block;
-    margin: 0px auto;
-    padding: 10px 20px;
-    background-color: midnightblue;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.register-btn:hover {
-    background-color: #88aed5;
-}
-
-.sign-out-btn {
-    display: inline-block;
-    margin: 0px auto;
-    padding: 10px 20px;
-    background-color: midnightblue;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.sign-out-btn:hover {
-    background-color: #88aed5;
-}
-
+.login-btn,
+.register-btn,
+.sign-out-btn,
+.movies-btn,
+.watchlist-btn,
+.tvshows-btn,
 .profile-btn {
     display: inline-block;
     margin: 0px auto;
@@ -175,6 +133,12 @@ li {
     cursor: pointer;
 }
 
+.login-btn:hover,
+.register-btn:hover,
+.sign-out-btn:hover,
+.movies-btn:hover,
+.watchlist-btn:hover,
+.tvshows-btn:hover,
 .profile-btn:hover {
     background-color: #88aed5;
 }
@@ -186,7 +150,7 @@ li {
     background-color: white;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 100;
 }
 
 .dropdown-content a {
@@ -206,37 +170,50 @@ li {
     display: block;
 }
 
-@media screen and (max-width: 800px) {
-    .header-title a {
-        font-size: 20px;
-    }
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto;
+}
 
-    .nav-menu a {
-        font-size: 20px;
-        margin-top: 20px;
-    }
+.hamburger .bar {
+    width: 35px;
+    height: 5px;
+    background-color: midnightblue;
+    margin: 6px 0;
+    transition: 0.4s;
+}
 
-    .navbar {
-        flex-direction: column;
-    }
-
+@media screen and (max-width: 1000px) {
     .nav-menu {
-        margin-top: -90px;
-        gap: 30px;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; 
+        right: 10px;
+        background-color: transparent;
+        border-radius: 5px;
+        z-index: 100; 
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+        position: absolute;
+        top: 10px; 
+        right: 20px; 
+        z-index: 101;
+        cursor: pointer;
     }
 
     .small-search {
-        margin-top: 20px;
-        width: 30px;
-        height: 30px;
-    }
-    .small-search_button {
-        width: 40px;
-        height: 40px;
-    }
-
-    .login-btn,
-    .register-btn {
-        font-size: 16px;
+        position: absolute;
+        top: 10px; 
+        right: 80px; 
+        z-index: 102; 
     }
 }
