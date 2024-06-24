@@ -429,8 +429,7 @@
                         <li> Pagina are rolul de a oferi utilizatorului cu rol de <b>admin</b> posibilitatea administrarii utilizatorilor 
                              platformei cu optiunea de crea noi admini sau de a sterge utilizatori.
                         </li>
-                        <li class="pictures" style="list-style: none"><img alt="manageUsers1" src="readMeImages/manageUsers1.png" width=800></li>
-                        <li class="pictures" style="list-style: none"><img alt="manageUsers2" src="readMeImages/manageUsers2.png" width=800></li>
+                        <li class="pictures" style="list-style: none"><img alt="manageUsers" src="readMeImages/manageUsers.png" width=800></li>
                     </ul>
                 </li>
                 <li id="addMovie-page"><b>Pagina de adaugare a unui film sau serial</b></li>
