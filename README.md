@@ -529,8 +529,13 @@
                             sectiune de informatii. De asemenea, este listata si o lista de titluri pentru care 
                             acesta este cunoscut.
                         </li>
-                        <li class="pictures" style="list-style: none"><img alt="actor"
-                                                                           src="readMeImages/actor.png" width=800>
+                        <li class="pictures" style="list-style: none"><img alt="actor1" src="readMeImages/actor1.png" width=800>
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="actor2" src="readMeImages/actor2.png" width=800>
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="actor3" src="readMeImages/actor3.png" width=350>
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="actor4" src="readMeImages/actor4.png" width=350>
                         </li>
                     </ul>
                 </li>
