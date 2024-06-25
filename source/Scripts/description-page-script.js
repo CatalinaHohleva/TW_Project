@@ -223,19 +223,21 @@ async function showMovieOrTvShowInfo(data) {
     const watchlistKey = `watchlist_${title}_${email}`;
     const isInWatchlist = localStorage.getItem(watchlistKey) === 'true';
 
-    buttonsContainer.innerHTML = `
+    if(email) {
+        buttonsContainer.innerHTML = `
         <div class="apply-btn" id="apply-btn">
             <i class="${isInWatchlist ? 'ri-add-circle-fill' : 'ri-add-circle-line'} apply-icon"></i>
         </div>`;
 
-    const role = localStorage.getItem('role');
+        const role = localStorage.getItem('role');
 
-    if (role === 'admin') {
-        buttonsContainer.innerHTML += `<button type="submit" class="edit-btn" id="edit-btn">Edit</button>`;
-        buttonsContainer.innerHTML += `
-            <div class="delete-btn" id="delete-btn">
-                <i class="ri-delete-bin-line delete-icon" ></i>
-            </div>`;
+        if (role === 'admin') {
+            buttonsContainer.innerHTML += `<button type="submit" class="edit-btn" id="edit-btn">Edit</button>`;
+            buttonsContainer.innerHTML += `
+                <div class="delete-btn" id="delete-btn">
+                    <i class="ri-delete-bin-line delete-icon" ></i>
+                </div>`;
+        }
     }
 
     movieElement.appendChild(buttonsContainer);
