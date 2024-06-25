@@ -332,7 +332,7 @@
                         <li>Acesta este meniul pentru un utilizator logat:</li>
                         <li class="pictures" style="list-style: none"><img alt="navbar2" src="readMeImages/navbar2.png" width=800
                         ></li>
-                        <li>Acesta este meniul atunci cand latimea paginii web se micsoreaza(< 800px):</li>
+                        <li>Acesta este meniul atunci cand latimea paginii web se micsoreaza(max 800px):</li>
                         <li class="pictures" style="list-style: none"><img alt="navbar3" src="readMeImages/navbar3.png" width=400
                         ></li>
                     </ul>
@@ -495,6 +495,7 @@
                                                                            width=800>
                         </li>
                     </ul>
+                </li>
                 <li id="movieTvShow-page"><b> Pagina de vizualizare a informatiilor despre un specific film sau serial</b></li>
                 <li style="list-style: none">
                     <ul>
@@ -538,6 +539,49 @@
                         <li class="pictures" style="list-style: none"><img alt="actor4" src="readMeImages/actor4.png" width=350>
                         </li>
                     </ul>
+                </li>
+                <li id="statistics-page"><b> Pagina de vizualizare a statisticilor </b></li>
+                <li style="list-style: none">
+                    <ul>
+                        <li>Pagina prezintă o  gama de statistici sub forma unor diagrame 
+                            ce pot fi filtrare dupa mai multe criterii cum ar fi: tip(Bar, Pie, Line), platforma, anul 
+                            de lansare. De asemenea, staisticile pot fi exporatate in format CSV, WebP si SVG.
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="statistics" src="readMeImages/statistics.png" width=800>
+                        </li>
+                    </ul>
+                </li>
+                <li id="search-page"><b> Pagina de cautare </b></li>
+                <li style="list-style: none">
+                    <ul>
+                        <li>Pagina ofera utilizatorului posibilitatea de cautare a titlulrilor de pe platforma sau să aplice 
+                           filtre avansate pentru a rafina rezultatele în funcție de preferințe specifice.
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="search" src="readMeImages/search.png" width=800>
+                        </li>
+                    </ul>
+                </li>
+                <li id="editMovie-page"><b> Pagina de editare a informatiilor unui film sau serial </b></li>
+                <li style="list-style: none">
+                    <ul>
+                        <li> Pagina are rolul de a oferi utilizatorului cu rol de <b>admin</b> posibilitatea editarii de date 
+                            deja existente in baza de date.
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="editMovie1" src="readMeImages/editMovie1.png" width=800>
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="editMovie2" src="readMeImages/editMovie2.png" width=800>
+                        </li>
+                    </ul> 
+                </li>
+                <li id="deleteMovie-page"><b> Pagina de stergere unui film sau serial </b></li>
+                <li style="list-style: none">
+                    <ul>
+                        <li> Pagina are rolul de a oferi utilizatorului cu rol de <b>admin</b> facilitatea de stergere a unui film sau 
+                            serial conectat.
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="deleteMovie" src="readMeImages/deleteMovie.png" width=800>
+                        </li>
+                    </ul> facilitatea de stergere a contul pe care este logat
                 </li>
                 <li id="about"><b>Pagina informativa</b></li>
                 <li style="list-style: none">
