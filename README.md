@@ -510,14 +510,15 @@
                             intr-un watchlist, iar un admin beneficiaza si de inca doua facilitati, mai exact, de a 
                             edita informatiile titlului curect si de a-l sterge din baza de date.
                         </li>
-                        <li class="pictures" style="list-style: none"><img alt="desc1"
-                                                                           src="readMeImages/desc1.png" width=800>
+                        <li class="pictures" style="list-style: none"><img alt="desc1" src="readMeImages/desc1.png" width=800>
                         </li>
-                        <li class="pictures" style="list-style: none"><img alt="desc2"
-                                                                           src="readMeImages/desc2.png" width=800>
+                        <li class="pictures" style="list-style: none"><img alt="desc2" src="readMeImages/desc2.png" width=800>
                         </li>
-                        <li class="pictures" style="list-style: none"><img alt="desc3"
-                                                                           src="readMeImages/desc3.png" width=600>
+                        <li class="pictures" style="list-style: none"><img alt="desc3" src="readMeImages/desc3.png" width=600>
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="desc4" src="readMeImages/desc4.png" width=800>
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="desc5" src="readMeImages/desc5.png" width=600>
                         </li>
                     </ul>
                 </li>
